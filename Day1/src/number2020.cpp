@@ -80,9 +80,14 @@ unsigned int adventDay1problem2(std::vector<int>& vector)
 int main(int argc, char *argv[])
 {
   // argv contain inputNumbers.txt path
-  if(argc < 3)
+  if (argc < 3)
   {
-    std::cout << "ERROR: inputNumbers.txt path" << std::endl;
+    std::cout << "ERROR: inputNumbers.txt path or problem number missing" << std::endl;
+    return -1;
+  }
+  else if ((std::stoi(argv[2]) < 1) || (std::stoi(argv[2]) > 2))
+  {
+    std::cout << "Problem 1 or 2" << std::endl;
     return -1;
   }
 
