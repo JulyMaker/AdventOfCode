@@ -7,7 +7,7 @@ Some solutions to raised problems on [Advent Of Code Web Page](https://adventofc
 ```
 $mkdir build
 $cd build
-$cmake .. -DCMAKE_INSTALL_PREFIX="$repopath\AdventOfCode\" //where $repopath is your path
+$cmake .. -G "Visual Studio 15 2017 Win64" //where you can choose your compiler
 ```
 - **Build** folder is a solution folder, in my case use visual studio 
 - In my case **deploy** folder is a compile results (exe file), you can change in DayX/CMakeLists file
