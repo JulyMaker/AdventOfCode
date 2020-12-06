@@ -93,10 +93,10 @@ long long int readFile(std::string file, int problNumber)
 
 int main(int argc, char *argv[])
 {
-  // argv contain inputTobogan.txt path
+  // argv contain inputDeclarationForm.txt path
   if (argc < 3)
   {
-    std::cout << "ERROR: inputTobogan.txt path or problem number missing" << std::endl;
+    std::cout << "ERROR: inputDeclarationForm.txt path or problem number missing" << std::endl;
     return -1;
   }
   else if ((std::stoi(argv[2]) < 1) || (std::stoi(argv[2]) > 2))
