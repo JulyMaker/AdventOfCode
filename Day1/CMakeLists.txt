@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 2.8.9)
  
-set(TARGET_NAME day1_2020sum)
+set(TARGET_NAME day01_2020sum)
 project(${TARGET_NAME})
 
 #Bring the headers, such as Student.h into the project

@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 2.8.9)
 
-set(TARGET_NAME day9_xmas)
+set(TARGET_NAME day09_xmas)
 project(${TARGET_NAME})
 
 #Bring the headers, such as Student.h into the project
