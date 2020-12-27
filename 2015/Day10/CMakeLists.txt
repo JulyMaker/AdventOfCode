@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 2.8.9)
 
-set(TARGET_NAME day4_md5)
+set(TARGET_NAME day10_repeatNumbers)
 project(${TARGET_NAME})
 
 #Bring the headers, such as Student.h into the project
