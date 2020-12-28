@@ -517,7 +517,7 @@ int foundBody(std::string s1, std::string s2)
   int pos = 0;
   int current = 0;
 
-  while(s2.size()+pos < s1.size())
+  while(s2.size()+pos <= s1.size())
   {
     if (s2[current] == '#' && s1[pos+current] == '#')
     {
@@ -533,7 +533,7 @@ int foundBody(std::string s1, std::string s2)
       current = 0;
     }
 
-    if (current == s2.size() - 1) return pos;
+    if (current == s2.size()) return pos; 
   }
 
   return -1;
@@ -550,6 +550,7 @@ long long monsterPattern(std::vector<std::string>& image)
                   std::count(monster[1].begin(), monster[1].end(), '#')+ 
                   std::count(monster[2].begin(), monster[2].end(), '#');
 
+  bool printMonster = false;
   int repeat = 0;
   for(int i=1; i<image.size()-1; ++i)
   {
@@ -569,12 +570,33 @@ long long monsterPattern(std::vector<std::string>& image)
         if (foundFoot) 
         {
           repeat++;
+          
+          printMonster = true;
+          if (printMonster)
+          {
+            image[i - 1][pos + 18] = '0';
+            image[i + 1][pos + 1]  = '0';
+            image[i + 1][pos + 4]  = '0';
+            image[i + 1][pos + 7]  = '0';
+            image[i + 1][pos + 10] = '0';
+            image[i + 1][pos + 13] = '0';
+            image[i + 1][pos + 16] = '0';
+            image[i][pos]          = '0';
+            image[i][pos + 5]      = '0';
+            image[i][pos + 6]      = '0';
+            image[i][pos + 11]     = '0';
+            image[i][pos + 12]     = '0';
+            image[i][pos + 17]     = '0';
+            image[i][pos + 18]     = '0';
+            image[i][pos + 19]     = '0';
+          }
+          
         } 
       }   
     }
   }
   
-
+  if(printMonster) printCollage(image);
   long long countPad = 0;
   
   if (repeat > 0)
@@ -583,7 +605,7 @@ long long monsterPattern(std::vector<std::string>& image)
     {
       countPad += std::count(line.begin(), line.end(), '#');
     }
-    countPad -= repeat * mons_num;
+    //countPad -= repeat * mons_num; //If not change X to 0
   }
   
   return countPad;
