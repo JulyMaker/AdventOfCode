@@ -512,10 +512,11 @@ std::vector<std::string> imageCollage(std::vector<tileEstructure> tiles, int ver
   return collage;
 }
 
-int foundBody(std::string s1, std::string s2)
+std::vector<int> foundBody(std::string s1, std::string s2)
 {
   int pos = 0;
   int current = 0;
+  std::vector<int> posi;
 
   while(s2.size()+pos <= s1.size())
   {
@@ -533,10 +534,15 @@ int foundBody(std::string s1, std::string s2)
       current = 0;
     }
 
-    if (current == s2.size()) return pos; 
+    if (current == s2.size())
+    {
+      posi.push_back(pos);
+      pos++;
+      current = 0;
+    }
   }
 
-  return -1;
+  return posi;
 }
 
 long long monsterPattern(std::vector<std::string>& image)
@@ -554,9 +560,11 @@ long long monsterPattern(std::vector<std::string>& image)
   int repeat = 0;
   for(int i=1; i<image.size()-1; ++i)
   {
-    int pos = foundBody(image[i], s1);
-    if (pos != -1)
+    std::vector<int> posi = foundBody(image[i], s1);
+    for (int j = 0; j < posi.size(); ++j)//if (pos != -1)
     {
+      int pos = posi[j];
+
       bool foundHead = image[i - 1][pos + 18] == '#';
       if (foundHead)
       {
