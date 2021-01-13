@@ -20,7 +20,7 @@ inline Point operator+(const Point& p1, const Point& p2)
   return { {std::get<0>(p1) + std::get<0>(p2), std::get<1>(p1) + std::get<1>(p2)} };
 }
 
-long long adventDay11problem12016(std::string instrucc)
+long long adventDay13problem12016(std::string instrucc)
 {    
   const int NUM = std::stoi(instrucc);
 
@@ -57,7 +57,7 @@ long long adventDay11problem12016(std::string instrucc)
   return steps;
 }
 
-long long adventDay11problem22016(std::string instrucc)
+long long adventDay13problem22016(std::string instrucc)
 {
   const int LIMIT = 50;
   const int NUM = std::stoi(instrucc);
@@ -112,8 +112,8 @@ long long int readFile(std::string file, int problNumber)
   //}
   //infile.close();
 
-  result = (problNumber == 1) ? adventDay11problem12016(instrucc)
-                              : adventDay11problem22016(instrucc);
+  result = (problNumber == 1) ? adventDay13problem12016(instrucc)
+                              : adventDay13problem22016(instrucc);
 
   return result;
 }

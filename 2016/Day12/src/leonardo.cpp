@@ -12,12 +12,12 @@
 #include <valarray>
 #include "assembunny.h"
 
-long long adventDay11problem12016(std::vector<std::string> instrucc)
+long long adventDay12problem12016(std::vector<std::string> instrucc)
 {    
   return Assembunny{ instrucc }.set('c', 0).optAdd().optMul().run().get('a');
 }
 
-long long adventDay11problem22016(std::vector<std::string> instrucc)
+long long adventDay12problem22016(std::vector<std::string> instrucc)
 {
   return Assembunny{ instrucc }.set('c', 1).optAdd().optMul().run().get('a');
 }
@@ -39,8 +39,8 @@ long long int readFile(std::string file, int problNumber)
   }
   infile.close();
 
-  result = (problNumber == 1) ? adventDay11problem12016(instrucc)
-                              : adventDay11problem22016(instrucc);
+  result = (problNumber == 1) ? adventDay12problem12016(instrucc)
+                              : adventDay12problem22016(instrucc);
 
   return result;
 }

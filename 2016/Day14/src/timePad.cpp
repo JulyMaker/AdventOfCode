@@ -106,7 +106,7 @@ const int WINDOW = 1000;
 const int LIMIT = 25600;
 
 
-long long adventDay11problem12016(std::string instrucc)
+long long adventDay14problem12016(std::string instrucc)
 {    
   std::array<LSet, 16> l3, l5;
   std::vector<int> ind;
@@ -145,7 +145,7 @@ long long adventDay11problem12016(std::string instrucc)
   return ind[GOAL - 1];
 }
 
-long long adventDay11problem22016(std::string instrucc)
+long long adventDay14problem22016(std::string instrucc)
 {
   std::array<LSet, 16> l3, l5;
   std::vector<int> ind;
@@ -201,8 +201,8 @@ long long int readFile(std::string file, int problNumber)
   //}
   //infile.close();
 
-  result = (problNumber == 1) ? adventDay11problem12016(instrucc)
-                              : adventDay11problem22016(instrucc);
+  result = (problNumber == 1) ? adventDay14problem12016(instrucc)
+                              : adventDay14problem22016(instrucc);
 
   return result;
 }
