@@ -31,7 +31,7 @@ uint64_t modExp(uint64_t e, uint64_t b = 252533, uint64_t m = 33554393)
 }
 
 
-long long adventDay24problem12015(std::string& line)
+long long adventDay25problem12015(std::string& line)
 {
   const std::regex PARSE{ R"(.*row (\d+), column (\d+).*)" };
   std::smatch m;
@@ -49,7 +49,7 @@ long long adventDay24problem12015(std::string& line)
   return 0;
 }
 
-long long adventDay24problem22015()
+long long adventDay25problem22015()
 {
   std::cout << "Happy Advent of Code :)" << std::endl;
 
@@ -71,8 +71,8 @@ long long readFile(std::string file, int problNumber)
 
     if (line == "") continue;
 
-    result = (problNumber == 1) ? adventDay24problem12015(line)
-                                : adventDay24problem22015();
+    result = (problNumber == 1) ? adventDay25problem12015(line)
+                                : adventDay25problem22015();
   }
   infile.close();
 
