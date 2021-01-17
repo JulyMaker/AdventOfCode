@@ -15,32 +15,27 @@
 #include <intrin.h>
 
 
-long long adventDay01problem12017(std::string& input)
+long long adventDay02problem12017(std::string& line)
 { 
-  std::size_t const N= input.size();
-  std::size_t const offset = 1;
-  int sum= 0;
-  for (std::size_t i= 0lu; i < N; ++i) 
-  {
-    if (input[i] == input[(i + offset) % N])
-    {
-      sum += input[i] - '0';
-    }
-  }
+  std::istringstream iss{ line };
+  std::vector<int> const nums{ std::istream_iterator<int>{iss}, {} };
 
-  return sum;
+  auto result = std::minmax_element(std::begin(nums), std::end(nums));
+
+  return *result.second - *result.first; // max - min
 }
 
-long long adventDay01problem22017(std::string& input)
+long long adventDay02problem22017(std::string& line)
 {
-  std::size_t const N = input.size();
-  std::size_t const offset =N / 2;
-  int sum= 0;
-  for (std::size_t i= 0lu; i < N; ++i) 
-  {
-    if (input[i] == input[(i + offset) % N]) 
-    {
-      sum += input[i] - '0';
+  std::istringstream iss{ line };
+  std::vector<int> const nums{ std::istream_iterator<int>{iss}, {} };
+
+  int sum = 0;
+  for (auto const v1 : nums) {
+    for (auto const v2 : nums) {
+      if (v1 != v2 && v1 % v2 == 0) {
+        sum += v1 / v2;
+      }
     }
   }
 
@@ -52,7 +47,6 @@ long long int readFile(std::string file, int problNumber)
   std::ifstream infile(file);
   std::string line;
  
-  std::string input;
   long long result = 0;
 
   while (!infile.eof())
@@ -60,12 +54,10 @@ long long int readFile(std::string file, int problNumber)
     std::getline(infile, line);
     if (line == "") continue;
   
-    input = line;
+    result += (problNumber == 1) ? adventDay02problem12017(line)
+                                 : adventDay02problem22017(line);
   }
   infile.close();
-
-  result = (problNumber == 1) ? adventDay01problem12017(input)
-                              : adventDay01problem22017(input);
 
   return result;
 }
@@ -73,7 +65,7 @@ long long int readFile(std::string file, int problNumber)
 int main(int argc, char *argv[])
 {
   // argv contain *.txt path
-  std::string fileName = "../../Day01/input01.txt";
+  std::string fileName = "../../Day02/input02.txt";
   int problem = 2;
 
   if (argc == 2)
