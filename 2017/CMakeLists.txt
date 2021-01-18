@@ -1,6 +1,10 @@
 cmake_minimum_required(VERSION 2.8.9)
 project(adventOfCode2017)
 
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_EXTENSIONS OFF)
+
 set(CMAKE_INSTALL_PREFIX "../")
 
 add_subdirectory( Day01 )
@@ -15,7 +19,7 @@ add_subdirectory( Day09 )
 add_subdirectory( Day10 )
 add_subdirectory( Day11 )
 add_subdirectory( Day12 )
-#add_subdirectory( Day13 )
+add_subdirectory( Day13 )
 #add_subdirectory( Day14 )
 #add_subdirectory( Day15 )
 #add_subdirectory( Day16 )
