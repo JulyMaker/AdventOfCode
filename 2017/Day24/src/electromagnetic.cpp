@@ -17,44 +17,65 @@
 #include <iomanip>
 #include <cctype> 
 #include <random>
-#include <iterator>
+#include <valarray>
 #include <thread>
 
-#include "duet_asm.h"
-
-
-long long adventDay18problem12017(std::ifstream& is)
+struct bridge 
 {
-  std::vector<program::instr> inst{ std::istream_iterator<program::instr>{is}, {} };
-  auto result = [aux = inst]() mutable 
-  {
-      program p0 = program{aux};
-      while (true) 
-      {
-        auto[fin, val] = p0.apply();
-        if (val)
-          return static_cast<int>(val.value());
-      } 
-  }();
+  int port1, port2;
+  bool avail;
+};
 
+std::istream& operator>> (std::istream& is, bridge & b) 
+{
+  (is >> b.port1).ignore(1, '/') >> b.port2;
+  b.avail = true;
+  return is;
+}
+
+template <typename Fn>
+int search(std::vector<bridge> & comp, Fn && f, int end = 0, int len = 0, int str = 0) 
+{
+  for (auto &[p1, p2, avail] : comp) 
+  {
+    if (avail && (p1 == end || p2 == end)) 
+    {
+      avail = false;
+      search(comp, std::forward<Fn>(f), end ^ p1 ^ p2, len + 1, str + p1 + p2);
+      avail = true;
+    }
+  }
+  return f(len, str);
+}
+
+long long adventDay24problem12017(std::ifstream& is)
+{
+  std::vector<bridge> bridges{ std::istream_iterator<bridge>{is}, {} };
+
+  auto result = search(bridges, [strength = 0](int, int s) mutable 
+  {
+    return strength = std::max(strength, s);
+  });
+  
   return result;
 }
 
-long long adventDay18problem22017(std::ifstream& is)
+long long adventDay24problem22017(std::ifstream& is)
 {
-  std::vector<program::instr> inst{ std::istream_iterator<program::instr>{is}, {} };
-
-  auto result = [aux = inst]() mutable
+  std::vector<bridge> bridges{ std::istream_iterator<bridge>{is}, {} };
+  
+  auto result = search(bridges, [strength = 0, length = 0](int l, int s) mutable 
   {
-    program p0 = program{ aux };
-    program p1 = program{ aux, 1 };
-
-    std::thread{ &program::run, &p0, &p1 }.detach();
-    std::thread{ &program::run, &p1, &p0 }.detach();
-    while (!p0.deadlock() || !p1.deadlock());
-
-    return p1.send_count();
-  }();
+    if (l > length) 
+    {
+      strength = s, length = l;
+    }
+    else if (l == length) 
+    {
+      strength = std::max(strength, s);
+    }
+    return strength;
+  });
 
   return result;
 }
@@ -63,20 +84,21 @@ long long int readFile(std::string file, int problNumber)
 {
   std::ifstream infile(file);
   //std::string line;
-
+  //
+  //std::vector<std::string> input;
   long long result = 0;
-
+  //
   //while (!infile.eof())
   //{
   //  std::getline(infile, line);
   //  if (line == "") continue;
   //
-  //  process(inst, line);
+  //  input.push_back(line);
   //}
   //infile.close();
 
-  result = (problNumber == 1) ? adventDay18problem12017(infile)
-                              : adventDay18problem22017(infile);
+  result = (problNumber == 1) ? adventDay24problem12017(infile)
+                              : adventDay24problem22017(infile);
 
   return result;
 }
@@ -84,7 +106,7 @@ long long int readFile(std::string file, int problNumber)
 int main(int argc, char *argv[])
 {
   // argv contain *.txt path
-  std::string fileName = "../../Day18/input18.txt";
+  std::string fileName = "../../Day24/input24.txt";
   int problem = 2;
 
   if (argc == 2)
