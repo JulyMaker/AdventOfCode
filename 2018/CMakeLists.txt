@@ -8,7 +8,7 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 set(CMAKE_INSTALL_PREFIX "../")
 
 add_subdirectory( Day01 )
-#add_subdirectory( Day02 )
+add_subdirectory( Day02 )
 #add_subdirectory( Day03 )
 #add_subdirectory( Day04 )
 #add_subdirectory( Day05 )
