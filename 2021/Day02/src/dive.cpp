@@ -22,42 +22,72 @@
 #include <unordered_set>
 
 
-long long adventDay01problem12021(std::ifstream& is)
+long long adventDay02problem12021(std::ifstream& is)
 {
-  std::vector<int> data(std::istream_iterator<int>(is), {});
+  long long distance = 0;
+  long long depth = 0;
 
-  int inc = 0;
-  for (int i = 0; i < data.size() - 1; ++i)
-  {
-    if (data[i+1] > data[i])
-      inc++;
+  std::string instruction;
+  unsigned int steps;
+
+  while (is >> instruction >> steps)
+  { 
+    if(instruction == "forward")
+    {
+      distance += steps;
+    }
+    else if (instruction == "up")
+    {
+      depth -= steps;
+    }
+    else if (instruction == "down")
+    {
+      depth += steps;
+    }
+
   }
+  is.close();
 
-  return inc;
+  return distance * depth;
 }
 
-long long adventDay01problem22021(std::ifstream& is)
+long long adventDay02problem22021(std::ifstream& is)
 {
-  std::vector<long> data(std::istream_iterator<int>(is), {});
-  int inc = 0;
+  long long distance = 0;
+  long long depth = 0;
+  long long aim = 0;
 
-  for (int i = 0; i < data.size() - 3; ++i)
+  std::string instruction;
+  unsigned int steps;
+
+  while (is >> instruction >> steps)
   {
-    const int a = data[i] + data[i + 1] + data[i + 2];
-    const int b = data[i + 1] + data[i + 2] + data[i + 3];
+    if (instruction == "forward")
+    {
+      distance += steps;
+      depth += aim * steps;
+    }
+    else if (instruction == "up")
+    {
+      aim -= steps;
+    }
+    else if (instruction == "down")
+    {
+      aim += steps;
+    }
 
-    if (b > a) inc++;
-  }  
+  }
+  is.close();
 
-  return inc;
+  return distance * depth;
 }
 
 long long int readFile(std::string file, int problNumber)
 {
   std::ifstream infile(file);
 
-  long long result = (problNumber == 1) ? adventDay01problem12021(infile)
-                                        : adventDay01problem22021(infile);
+  long long result = (problNumber == 1) ? adventDay02problem12021(infile)
+                                        : adventDay02problem22021(infile);
 
   return result;
 }
@@ -65,7 +95,7 @@ long long int readFile(std::string file, int problNumber)
 int main(int argc, char *argv[])
 {
   // argv contain *.txt path
-  std::string fileName = "../../Day01/input01.txt";
+  std::string fileName = "../../Day02/input01.txt";
   int problem = 1;
 
   if (argc == 2)
