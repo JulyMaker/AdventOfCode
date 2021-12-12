@@ -62,13 +62,6 @@ long long adventDay08problem12021(std::ifstream& is)
   return total;
 }
 
-void numberCode()
-{
-  
-
-}
-
-
 void numberDecode(std::vector<std::string>& numCode, std::vector<std::string>& code)
 {
   // 6 segm [0,6,9] (nine contain FOUR no 0 no 6, 0 contain SEVEN no 6 no 9 )
