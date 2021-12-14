@@ -16,9 +16,11 @@ CompressedPolymer CompressedPolymer::applyRules(const std::unordered_map<std::ar
   next.first_ = first_;
   next.last_ = last_;
 
-  for (auto [pair, count] : pair_counts_) {
+  for (auto [pair, count] : pair_counts_) 
+  {
     auto rule_it = rules.find(pair);
-    if (rule_it == rules.end()) {
+    if (rule_it == rules.end()) 
+    {
       next.pair_counts_[pair] += count;
       continue;
     }
@@ -40,9 +42,8 @@ int64_t CompressedPolymer::Score() const
   ++element_counts[last_];
 
   for (auto& [_, count] : element_counts) 
-  {
     count /= 2;
-  }
+
 
   auto [min_it, max_it] = std::minmax_element(
     element_counts.begin(), element_counts.end(),
