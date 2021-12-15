@@ -1,6 +1,6 @@
 cmake_minimum_required (VERSION 3.11.0)
 
-set(TARGET_NAME day08_memoryManeuver)
+set(TARGET_NAME day11_chronalCharge)
 project(${TARGET_NAME})
 
 #Bring the headers, such as Student.h into the project
