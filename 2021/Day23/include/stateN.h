@@ -124,12 +124,11 @@ struct StateN
     // Moving from rooms -> hallway.
     for (const CellN room_type : {CellN::kA, CellN::kB, CellN::kC, CellN::kD})
     {
-      const std::optional<int> initial_room_pos =
-        FindMovableFromRoom(room_type);
-      if (!initial_room_pos.has_value()) continue;
+      const std::optional<int> initial_room_pos = FindMovableFromRoom(room_type);
+      if (!initial_room_pos.has_value()) 
+        continue;
 
-      const std::array<CellN, kRoomSize>& source_room =
-        DestinationRoom(room_type);
+      const std::array<CellN, kRoomSize>& source_room = DestinationRoom(room_type);
 
       const int starting_room_position = RoomPosition(room_type);
       for (int final_hallway_pos = starting_room_position; final_hallway_pos >= 0; --final_hallway_pos) 
