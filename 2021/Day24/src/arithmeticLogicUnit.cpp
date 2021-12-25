@@ -116,12 +116,7 @@ uint64_t adventDay24problem12021(std::ifstream& input)
   }
   program.push_back(groups);
 
-  std::pair<int, int> op;
-  search(program);
-
-  std::cout << "Highest valid number: " << search(program) << "\n";
-
-  return 0;
+  return search(program);
 }
 
 uint64_t adventDay24problem22021(std::ifstream& input)
@@ -142,12 +137,7 @@ uint64_t adventDay24problem22021(std::ifstream& input)
   }
   program.push_back(groups);
 
-  std::pair<int, int> op;
-  search(program);
-
-  std::cout << "Lowest valid number: " << search(program, false) << "\n";
-
-  return  0;
+  return  search(program, false);
 }
 
 uint64_t readFile(std::string file, int problNumber)
