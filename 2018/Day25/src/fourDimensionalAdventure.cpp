@@ -119,7 +119,7 @@ int64_t adventDay25problem12018(std::ifstream& input)
 
 int64_t adventDay25problem22018(std::ifstream& input)
 {
-  
+  std::cout << "Happy Advent of Code 2018!" << std::endl;
   return 0;
 }
 
