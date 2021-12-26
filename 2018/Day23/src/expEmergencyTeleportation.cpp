@@ -63,7 +63,7 @@ Nanobots getNanobots(std::ifstream& infile)
   return nanobots;
 }
 
-int64_t adventDay22problem12018(std::ifstream& input)
+int64_t adventDay23problem12018(std::ifstream& input)
 {
   Nanobots nanobots = getNanobots(input);
 
@@ -110,7 +110,7 @@ bool covers(const Nanobot& nanobot, const Point& p, const int64_t& padding)
   return covers(nanobot, p.x, p.y, p.z, padding);
 }
 
-int64_t adventDay22problem22018(std::ifstream& input)
+int64_t adventDay23problem22018(std::ifstream& input)
 {
   Nanobots nanobots = getNanobots(input);
 
@@ -208,8 +208,8 @@ int64_t readFile(std::string file, int problNumber)
 {
   std::ifstream infile(file);
 
-  long long result = (problNumber == 1) ? adventDay22problem12018(infile)
-                                        : adventDay22problem22018(infile);
+  long long result = (problNumber == 1) ? adventDay23problem12018(infile)
+                                        : adventDay23problem22018(infile);
 
   return result;
 }
