@@ -1,6 +1,5 @@
 #include <utils.h>
 
-
 uint64_t adventDay01problem12019(std::ifstream& input)
 {
   uint64_t result = 0;
@@ -10,7 +9,6 @@ uint64_t adventDay01problem12019(std::ifstream& input)
 
   return result;
 }
-
 
 uint64_t adventDay01problem22019(std::ifstream& input)
 {
@@ -44,14 +42,10 @@ int main(int argc, char *argv[])
   uint64_t result = 0;
   switch (problem)
   {
-  case 1:
-    result = adventDay01problem12019(inputFile);
-    break;
-  case 2:
-    result = adventDay01problem22019(inputFile);
-    break;
-  default:
-    std::cout << "The number problem isn't right" << result << std::endl;
+    case 1: result = adventDay01problem12019(inputFile); break;
+    case 2: result = adventDay01problem22019(inputFile); break;
+    default:
+      std::cout << "The number problem isn't right" << result << std::endl;
   }
 
   std::cout << "Answer is: " << result << std::endl;
