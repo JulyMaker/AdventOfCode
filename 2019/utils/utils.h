@@ -25,17 +25,35 @@
 #include <queue>
 #include <optional>
 
-std::vector<std::string> parseInput(std::ifstream& input)
+std::vector<std::string> parseInput(std::ifstream& input, const char c)
 {
   std::vector<std::string> output;
   std::string line;
 
   while (!input.eof())
   {
-    std::getline(input, line);
+    std::getline(input, line, c);
     if (line != "")
     {
       output.push_back(line);
+    }
+  }
+  input.close();
+
+  return output;
+}
+
+std::vector<int> parseInputInt(std::ifstream& input, const char c)
+{
+  std::vector<int> output;
+  std::string line;
+
+  while (!input.eof())
+  {
+    std::getline(input, line, c);
+    if (line != "")
+    {
+      output.push_back(stoi(line));
     }
   }
   input.close();
