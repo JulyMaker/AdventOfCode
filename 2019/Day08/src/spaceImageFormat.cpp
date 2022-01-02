@@ -30,7 +30,7 @@ uint64_t adventDay08problem22019(std::ifstream& input)
   std::string layer(TALL * WIDE, ' ');
   std::string result(TALL * WIDE, '2');
 
-  while (input.read(layer.data(), 6 * 25)) 
+  while (input.read(layer.data(), TALL * WIDE))
   {
     for (auto i = 0ul; i < result.size(); ++i)
       if (result[i] == '2')
