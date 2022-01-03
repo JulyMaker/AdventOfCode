@@ -61,6 +61,16 @@ std::vector<int> parseInputInt(std::ifstream& input, const char c)
   return output;
 }
 
+std::string parseLine(std::ifstream& input)
+{
+  std::string line;
+
+  std::getline(input, line);
+  input.close();
+
+  return line;
+}
+
 std::vector<int64_t> parseInputInt64(std::ifstream& input, const char c)
 {
   std::vector<int64_t> output;
@@ -71,7 +81,7 @@ std::vector<int64_t> parseInputInt64(std::ifstream& input, const char c)
     std::getline(input, line, c);
     if (line != "")
     {
-      output.push_back(stoi(line));
+      output.push_back(stoll(line));
     }
   }
   input.close();
