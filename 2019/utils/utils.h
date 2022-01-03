@@ -61,6 +61,24 @@ std::vector<int> parseInputInt(std::ifstream& input, const char c)
   return output;
 }
 
+std::vector<int64_t> parseInputInt64(std::ifstream& input, const char c)
+{
+  std::vector<int64_t> output;
+  std::string line;
+
+  while (!input.eof())
+  {
+    std::getline(input, line, c);
+    if (line != "")
+    {
+      output.push_back(stoi(line));
+    }
+  }
+  input.close();
+
+  return output;
+}
+
 template<class T>
 std::vector<T> parseInput(std::ifstream& is)
 {
