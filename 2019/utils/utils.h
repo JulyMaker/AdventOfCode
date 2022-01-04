@@ -71,6 +71,20 @@ std::string parseLine(std::ifstream& input)
   return line;
 }
 
+std::vector<int> parseCharToChar(std::ifstream& input)
+{
+  std::string number;
+  std::vector<int> sequence;
+
+  input >> number;
+  for (int i = 0; i < number.size(); i++)
+  {
+    sequence.push_back(number[i] - '0');
+  }
+
+  return sequence;
+}
+
 std::vector<int64_t> parseInputInt64(std::ifstream& input, const char c)
 {
   std::vector<int64_t> output;
@@ -144,6 +158,17 @@ std::vector<std::string> splitS(const std::string& text, const std::string& deli
     tokens.push_back(text.substr(start));
 
   return tokens;
+}
+
+int64_t vectorToInt(std::vector<int>& vector, int offset1 = 0, int offset2 = 0)
+{
+  if (offset2 == 0) offset2 = vector.size();
+
+  auto result = std::accumulate(vector.begin() + offset1, vector.begin() + offset2, 0, [](int l, int r) {
+    return l * 10 + r;
+    });
+
+  return result;
 }
 
 bool mainControl(int argc, char* argv[], int& problem, std::string& fileName)
