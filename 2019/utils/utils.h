@@ -44,6 +44,25 @@ std::vector<std::string> parseInput(std::ifstream& input, const char c)
   return output;
 }
 
+std::vector<std::vector<char>> parseInputChars(std::ifstream& input)
+{
+  std::string line;
+  std::vector<std::vector<char>> map;
+  std::vector<char> aux;
+
+  while (std::getline(input, line))
+  {
+    for (int i = 0; i < line.size(); i++)
+    {
+      aux.push_back(line[i]);
+    }
+    map.push_back(aux);
+    aux.clear();
+  }
+
+  return map;
+}
+
 std::vector<int> parseInputInt(std::ifstream& input, const char c)
 {
   std::vector<int> output;
