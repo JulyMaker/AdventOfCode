@@ -24,6 +24,7 @@
 #include <stack>
 #include <queue>
 #include <optional>
+#include <bitset>
 
 std::vector<std::string> parseInput(std::ifstream& input, const char c)
 {
