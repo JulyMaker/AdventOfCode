@@ -222,3 +222,32 @@ bool mainControl(int argc, char* argv[], int& problem, std::string& fileName)
 
   return true;
 }
+
+void readInput22(std::ifstream& input, std::vector<std::pair<std::string, long long>>& shuffleProcess)
+{
+  std::string op;
+  long long number = 0;
+
+  while (input >> op)
+  {
+    if (op == "cut")
+    {
+      input >> number;
+      shuffleProcess.push_back(std::make_pair("cut", number));
+    }
+    else
+    {
+      input >> op >> op;
+      if (op == "increment")
+      {
+        input >> number;
+        shuffleProcess.push_back(std::make_pair("increment", number));
+      }
+      else
+      {
+        input >> op;
+        shuffleProcess.push_back(std::make_pair("new", number));
+      }
+    }
+  }
+}
