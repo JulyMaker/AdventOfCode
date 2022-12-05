@@ -223,31 +223,59 @@ bool mainControl(int argc, char* argv[], int& problem, std::string& fileName)
   return true;
 }
 
-void readInput22(std::ifstream& input, std::vector<std::pair<std::string, long long>>& shuffleProcess)
+void readInput05(std::ifstream& infile, std::vector<std::stack<char>>& crane, std::vector<std::vector<int>>& moves)
 {
-  std::string op;
-  long long number = 0;
+  std::vector<std::vector<char>> stackAux;
+  //std::regex pattern1 = std::regex{ "[\\[(\\w))\\]\\s|\\s\\s\\s\\s]+\\[(\\w)\\]|\\s\\s\\s" };
+  std::regex pattern1 = std::regex{ "\\[(\\w)\\]" };
+  std::regex pattern2 = std::regex{ "move (\\d+) from (\\d+) to (\\d+)" };
+  std::smatch m;
+  bool firstTime = true;
 
-  while (input >> op)
+  for (std::string line; getline(infile, line); )
   {
-    if (op == "cut")
-    {
-      input >> number;
-      shuffleProcess.push_back(std::make_pair("cut", number));
-    }
-    else
-    {
-      input >> op >> op;
-      if (op == "increment")
+    if (line == "") break;
+
+    int j = 0;
+    do {
+      if (firstTime)
       {
-        input >> number;
-        shuffleProcess.push_back(std::make_pair("increment", number));
+        std::stack<char> nstack = std::stack<char>();
+        crane.push_back(nstack);
+        std::vector<char> nvector = std::vector<char>();
+        stackAux.push_back(nvector);
       }
+
+      std::string subStr = line.substr(j, 3);
+      if (regex_match(subStr, m, pattern1))
+        stackAux[j / 4].push_back(m[1].str()[0]);
       else
-      {
-        input >> op;
-        shuffleProcess.push_back(std::make_pair("new", number));
-      }
+        stackAux[j / 4].push_back(' ');
+
+      j += 4;
+    } while (j <= line.size() - 3);  
+
+    firstTime = false;
+  }
+
+  // Fill stack
+  for(int pos=0; pos < stackAux.size(); pos++)
+    for(int v= stackAux[pos].size()-2; v >= 0; v--)
+    {
+      if(stackAux[pos][v] != ' ')
+        crane[pos].push(stackAux[pos][v]);
+    }
+
+  // Fill moves
+  for (std::string line; getline(infile, line); )
+  {
+    regex_match(line, m, pattern2);
+    std::vector<int> nvector = std::vector<int>();
+    moves.push_back(nvector);
+
+    for (int i = 1; i < m.size(); i++)
+    {
+      moves[moves.size() - 1].push_back(std::stoi(m[i]));
     }
   }
 }
