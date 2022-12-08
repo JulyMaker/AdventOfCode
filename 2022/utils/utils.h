@@ -63,6 +63,25 @@ std::vector<std::vector<char>> parseInputChars(std::ifstream& input)
   return map;
 }
 
+std::vector<std::vector<int>> parseInputGrid(std::ifstream& input)
+{
+  std::string line;
+  std::vector<std::vector<int>> map;
+  std::vector<int> aux;
+
+  while (std::getline(input, line))
+  {
+    for (int i = 0; i < line.size(); i++)
+    {
+      aux.push_back(line[i]-'0');
+    }
+    map.push_back(aux);
+    aux.clear();
+  }
+
+  return map;
+}
+
 std::vector<int> parseInputInt(std::ifstream& input, const char c)
 {
   std::vector<int> output;
