@@ -47,8 +47,8 @@ uint64_t adventDay08problem22022(std::ifstream& input)
   uint64_t score = 0;
   
   std::vector<std::vector<int>> grid = parseInputGrid(input);
-  for (int i = 0; i < grid.size(); i++)
-    for (int j = 0; j < grid[0].size(); j++)
+  for (int i = 1; i < grid.size() - 1; i++)
+    for (int j = 1; j < grid[0].size() - 1; j++)
     {
       int up = j;
       int down = j;
