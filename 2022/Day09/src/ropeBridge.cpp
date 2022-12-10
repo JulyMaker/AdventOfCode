@@ -85,7 +85,7 @@ uint64_t adventDay09problem22022(std::ifstream& input)
         }
       }
       
-      visitedPos.insert(body[body.size()-1]);
+      visitedPos.insert(body[body.size()-1]); // tail
     }
   }
 
