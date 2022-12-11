@@ -298,3 +298,71 @@ void readInput05(std::ifstream& infile, std::vector<std::stack<char>>& crane, st
     }
   }
 }
+
+struct monckey
+{
+  int id;
+  std::vector<int> items;
+  std::vector<std::string> op;
+  std::vector<int> test = {0, 0, 0};
+  uint64_t inspects = 0;
+
+  static bool monckeySort(monckey const& m1, monckey const& m2)
+  {
+    return m1.inspects > m2.inspects;
+  }
+};
+
+void readInput11(std::ifstream& infile, std::vector<monckey>& monkeys)
+{
+  std::vector<std::vector<char>> stackAux;
+  std::regex pattern1 = std::regex{ "Monkey (\\d+):" };
+  std::regex pattern2 = std::regex{ "  Starting items: (.*)" };
+  std::regex pattern3 = std::regex{ "  Operation: new = old (\\*|\\+) (\\d+|old)" };
+  std::regex pattern4 = std::regex{ "  Test: divisible by (\\d+)" };
+  std::regex pattern5 = std::regex{ "    If true: throw to monkey (\\d+)" };
+  std::regex pattern6 = std::regex{ "    If false: throw to monkey (\\d+)" };
+  std::smatch m;
+
+  int monckeyId = -1;
+
+  for (std::string line; getline(infile, line); )
+  {
+    if (line == " ") continue;
+
+    if (regex_match(line, m, pattern1)) // Id
+    {
+      monckey mon;
+      mon.id = stoi(m[1]);
+
+      monkeys.push_back(mon);
+      monckeyId++;
+    }
+     
+    if (regex_match(line, m, pattern2)) // Items
+    {
+      monkeys[monckeyId].items = splitI(m[1].str(), ", ");
+    }
+
+    if (regex_match(line, m, pattern3)) // Items
+    {
+      monkeys[monckeyId].op.push_back(m[1].str());
+      monkeys[monckeyId].op.push_back(m[2].str());
+    }
+
+    if (regex_match(line, m, pattern4)) // test
+    {
+      monkeys[monckeyId].test[0] = stoi(m[1]);;
+    }
+
+    if (regex_match(line, m, pattern5)) // If true
+    {
+      monkeys[monckeyId].test[1] = stoi(m[1]);;
+    }
+
+    if (regex_match(line, m, pattern6)) // If false
+    {
+      monkeys[monckeyId].test[2] = stoi(m[1]);;
+    }
+  }
+}
