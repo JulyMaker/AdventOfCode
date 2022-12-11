@@ -15,21 +15,15 @@ uint64_t adventDay10problem12022(std::ifstream& input)
   {
     std::vector<std::string> instruction = splitS(ins, " ");
 
-    if (instruction[0] == "noop") // noop is 1 cycle
+    int cy = (instruction[0] == "noop") ? 1 : 2;
+    for (int i = 0; i < cy; i++) // noop is 1 cycle and addx is 2 cycles
     {
       cycle += 1;
-      if (cycle == cycleControl) { cycleControl += CYCLEINC;  score += x*cycle; }
+      if (cycle == cycleControl) { cycleControl += CYCLEINC;  score += x * cycle; }
     }
-    else
-    {
-      for (int i = 0; i < 2; i++) // addx is 2 cycles
-      {
-        cycle += 1;
-        if (cycle == cycleControl) { cycleControl += CYCLEINC;  score += x*cycle; }
-      }
-      
+
+    if (instruction[0] == "addx")
       x += stoi(instruction[1]);
-    }
 
     if (cycleControl > 240) break;
   }
@@ -43,7 +37,6 @@ uint64_t adventDay10problem22022(std::ifstream& input)
   
   int x = 1;
   int cycle = 0;
-  int cycleControl = 20;
   const int WIDE = 40;
   const int HIGH = 6;
 
@@ -54,23 +47,15 @@ uint64_t adventDay10problem22022(std::ifstream& input)
   {
     std::vector<std::string> instruction = splitS(ins, " ");
 
-    if (instruction[0] == "noop") // noop is 1 cycle
+    int cy = (instruction[0] == "noop") ? 1 : 2;
+    for (int i = 0; i < cy; i++) // noop is 1 cycle and addx is 2 cycles
     {
       cycle += 1;
-      screen[(cycle - 1) / 40][(cycle - 1) % 40] = ( std::abs(x - ((cycle - 1) % 40)) <= 1) ? '#': ' ';
+      screen[(cycle - 1) / 40][(cycle - 1) % 40] = (std::abs(x - ((cycle - 1) % 40)) <= 1) ? '#' : ' ';
     }
-    else
-    {
-      for (int i = 0; i < 2; i++) // addx is 2 cycles
-      {
-        cycle += 1;
-        screen[(cycle - 1) / 40][(cycle - 1) % 40] = (std::abs(x - ((cycle - 1) % 40)) <= 1) ? '#' : ' ';
-      }
 
+    if(instruction[0] == "addx")
       x += stoi(instruction[1]);
-    }
-
-    if (cycleControl > 240) break;
   }
 
   for (auto& s : screen)
