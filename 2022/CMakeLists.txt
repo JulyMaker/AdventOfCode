@@ -20,7 +20,7 @@ add_subdirectory( Day10 )
 add_subdirectory( Day11 )
 add_subdirectory( Day12 )
 add_subdirectory( Day13 )
-# add_subdirectory( Day14 )
+add_subdirectory( Day14 )
 # add_subdirectory( Day15 )
 # add_subdirectory( Day16 )
 # add_subdirectory( Day17 )
@@ -32,3 +32,16 @@ add_subdirectory( Day13 )
 # add_subdirectory( Day23 )
 # add_subdirectory( Day24 )
 # add_subdirectory( Day25 )
+
+
+########
+#Resource file
+########
+configure_file (
+  "${CMAKE_CURRENT_SOURCE_DIR}/utils/paths.h.in"
+  "${CMAKE_CURRENT_SOURCE_DIR}/utils/paths.h"
+)
+
+list( APPEND GENERATED_FILES 
+  ${CMAKE_CURRENT_SOURCE_DIR}/utils/paths.h
+)

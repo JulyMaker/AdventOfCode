@@ -75,8 +75,8 @@ int main(int argc, char *argv[])
   int problem = 2;
   std::string day = "10";
 
-  std::string fileName = "../../Day"+day+"/input.txt";
-  //fileName = "../../Day" + day + "/inputExample.txt";
+  std::string fileName = DAY_PATH(day);
+  //fileName = DAY_EXAMPLE_PATH(day);
 
   if (!mainControl(argc, argv, problem, fileName)) return -1;
 

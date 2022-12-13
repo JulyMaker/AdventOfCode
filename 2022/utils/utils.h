@@ -1,30 +1,5 @@
-#include <iostream>
-#include <sstream>
-#include <string>
-#include <fstream>
-#include <regex>
-#include <map>
-#include <set>
-#include <vector>
-#include <algorithm>
-#include <functional>
-#include <unordered_map>
-#include <array>
-#include <mutex>
-#include <numeric>
-#include <intrin.h>
-#include <tuple>
-#include <iomanip>
-#include <cctype> 
-#include <random>
-#include <valarray>
-#include <thread>
-#include <unordered_set>
-#include <deque>
-#include <stack>
-#include <queue>
-#include <optional>
-#include <bitset>
+#include <includes.h>
+#include <paths.h>
 
 std::vector<std::string> parseInput(std::ifstream& input, const char c)
 {
