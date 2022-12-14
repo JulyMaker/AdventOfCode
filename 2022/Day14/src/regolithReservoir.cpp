@@ -10,6 +10,36 @@ Point operator+(Point p1, Point p2)
   return {p1.first + p2.first, p1.second + p2.second };
 }
 
+void printmap(const Map& gameMapint)
+{
+  int maxHeight = 0;
+  int maxWe = 0;
+
+  for (auto& point : gameMapint)
+  {
+    maxHeight = std::max(maxHeight, point.first.first);
+    maxWe = std::max(maxWe, point.first.second);
+  }
+
+  std::vector<std::vector<char>> map(maxWe +1, std::vector<char>(maxHeight +1, ' '));
+  for (auto& point : gameMapint)
+  {
+    char aux = ' ';
+    if (point.second == OBJ::WALL) aux = '#';
+    if (point.second == OBJ::SAND) aux = 'o';
+
+    map[point.first.second][point.first.first] = aux;
+  }
+
+  for (auto& c : map)
+  {
+    for (auto& s : c)
+      std::cout << s;
+    std::cout << std::endl;
+  }
+    
+}
+
 void fillWalls(const std::vector<std::string>& in, Map& gameMap, int& maxHeight)
 {
   // Map only walls
@@ -29,7 +59,7 @@ void fillWalls(const std::vector<std::string>& in, Map& gameMap, int& maxHeight)
 
       int x = pointsInt[0];
       int y = pointsInt[1];
-      maxHeight = std::max(maxHeight, py);
+      maxHeight = std::max(maxHeight, y);
       gameMap[Point(pointsInt[0], pointsInt[1])] = OBJ::WALL;
 
       if (px == x) // Vertical wall
@@ -72,12 +102,14 @@ uint64_t adventDay14problem12022(std::ifstream& input)
 
   int maxHeight = 0;
   Map gameMap;
+
   std::vector<std::string> in = parseInput(input, '\n');
   fillWalls(in, gameMap, maxHeight);
   
   // Map sand
   const std::vector<Point> inc = { {0,1}, {-1, 1}, {1, 1} };
   fillSand(gameMap, Point(500, 0), maxHeight, inc, score);
+  //printmap(gameMap);
 
   return score;
 }
@@ -105,12 +137,14 @@ uint64_t adventDay14problem22022(std::ifstream& input)
   
   int maxHeight = 0;
   Map gameMap;
+
   std::vector<std::string> in = parseInput(input, '\n');
   fillWalls(in, gameMap, maxHeight);
 
   // Map sand
   const std::vector<Point> inc = { {0,1}, {-1, 1}, {1, 1} };
   fillSand2(gameMap, Point(500, 0), maxHeight + 2, inc, score);
+  //printmap(gameMap);
 
   return score;
 }
