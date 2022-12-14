@@ -31,7 +31,8 @@ uint64_t adventDay11problem12022(std::ifstream& input)
     }
   }
   
-  std::sort(monckeys.begin(), monckeys.end(), &monckey::monckeySort);
+  //std::sort(monckeys.begin(), monckeys.end(), &monckey::monckeySort);
+  std::sort(monckeys.begin(), monckeys.end(), [](monckey m1, monckey m2) {return m1.inspects > m2.inspects; });
   score = monckeys[0].inspects * monckeys[1].inspects;
 
   return score;
@@ -68,7 +69,8 @@ uint64_t adventDay11problem22022(std::ifstream& input)
     }
   }
 
-  std::sort(monckeys.begin(), monckeys.end(), &monckey::monckeySort);
+  //std::sort(monckeys.begin(), monckeys.end(), &monckey::monckeySort);
+  std::sort(monckeys.begin(), monckeys.end(), [](monckey m1, monckey m2) {return m1.inspects > m2.inspects; });
   score = monckeys[0].inspects * monckeys[1].inspects;
 
   return score;

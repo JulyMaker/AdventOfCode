@@ -283,10 +283,10 @@ struct monckey
   std::vector<int> test = {0, 0, 0};
   uint64_t inspects = 0;
 
-  static bool monckeySort(monckey const& m1, monckey const& m2)
-  {
-    return m1.inspects > m2.inspects;
-  }
+  //static bool monckeySort(monckey const& m1, monckey const& m2)
+  //{
+  //  return m1.inspects > m2.inspects;
+  //}
 };
 
 void readInput11(std::ifstream& infile, std::vector<monckey>& monkeys)
