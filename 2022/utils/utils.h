@@ -1,6 +1,7 @@
 #include <includes.h>
 #include <paths.h>
 
+
 std::vector<std::string> parseInput(std::ifstream& input, const char c)
 {
   std::vector<std::string> output;
@@ -341,3 +342,12 @@ void readInput11(std::ifstream& infile, std::vector<monckey>& monkeys)
     }
   }
 }
+
+template <typename T1, typename T2>
+struct PointHash
+{
+  size_t operator()(const std::pair<T1, T2>& p) const {
+
+    return p.first * p.second;
+  }
+};
