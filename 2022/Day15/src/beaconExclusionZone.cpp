@@ -150,9 +150,9 @@ int main(int argc, char *argv[])
   // argv contain *.txt path
   int problem = 2;
   std::string day = "15";
+  const bool example = false;
 
-  std::string fileName = DAY_PATH(day);
-  //fileName = DAY_EXAMPLE_PATH(day);
+  std::string fileName = (example) ? DAY_EXAMPLE_PATH(day) : DAY_PATH(day);
 
   if (!mainControl(argc, argv, problem, fileName)) return -1;
 
