@@ -8,11 +8,11 @@ struct Node
 
   void swap(Node* node)
   {
-    int64_t auxVal = this->val;
-    uint64_t auxId = this->id;
+    int64_t auxVal = val;
+    uint64_t auxId = id;
 
-    this->val = node->val;
-    this->id = node->id;
+    val = node->val;
+    id = node->id;
 
     node->val = auxVal;
     node->id = auxId;
