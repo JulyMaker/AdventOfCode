@@ -143,6 +143,20 @@ std::vector<std::string> parseInputReg(std::ifstream& infile, std::string rex)
   return output;
 }
 
+std::vector<std::string> parseInputReg(std::string& s, std::string rex)
+{
+  //std::regex pattern = std::regex{ "^pos=<([-]?\\d+),([-]?\\d+),([-]?\\d+)>, r=(\\d+)$" };
+  std::regex pattern = std::regex{ rex };
+  std::vector<std::string> output;
+
+  std::smatch m;
+  regex_match(s, m, pattern);
+  for (auto& i : m)
+    output.push_back(i);
+
+  return output;
+}
+
 std::vector<int> splitI(const std::string& text, const std::string& delims)
 {
   std::vector<int> tokens;
