@@ -24,7 +24,7 @@ std::vector<Coord> South = { SE, S, SW };
 std::vector<Coord> East  = { NE, E, SE };
 std::vector<Coord> West  = { SW, W, NW };
 
-std::vector<std::vector<Coord>> Directions = { North, South, West, East };
+const std::vector<std::vector<Coord>> DIR = { North, South, West, East };
 auto All = { NE, N, NW, W, SW, S, SE, E };
 
 bool moveRound(std::map<uint64_t, Coord>& elfs, std::set<Coord>& occupied, const uint64_t roundNum)
@@ -44,11 +44,11 @@ bool moveRound(std::map<uint64_t, Coord>& elfs, std::set<Coord>& occupied, const
     bool hasProposed = false;
     for (int idx = 0; idx < 4; ++idx) 
     {
-      auto Dirs = Directions[(roundNum + idx) % 4];
-      if (std::none_of(Dirs.begin(), Dirs.end(), [&elf, &occupied](auto& c) { return occupied.contains(elf.second + c); })) {
+      auto dirs = DIR[(roundNum + idx) % 4];
+      if (std::none_of(dirs.begin(), dirs.end(), [&elf, &occupied](auto& c) { return occupied.contains(elf.second + c); })) {
 
-        proposedPos[elf.first] = elf.second + Dirs[1];
-        coordCnt[elf.second + Dirs[1]]++;
+        proposedPos[elf.first] = elf.second + dirs[1];
+        coordCnt[elf.second + dirs[1]]++;
         hasProposed = true;
         break;
       }
