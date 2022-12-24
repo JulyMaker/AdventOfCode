@@ -32,10 +32,11 @@ int reachGoal(const Coord start, const Coord goal, const Boundaries& bound, std:
   while (!curr.contains(goal))
   {
     blizzards.clear();
-    for (Coord& p : dirBliz[0]) { if (++p.second == maxY) p.second = 1;         blizzards.insert(p); }
-    for (Coord& p : dirBliz[1]) { if (!--p.second)        p.second = maxY - 1;	blizzards.insert(p); }
-    for (Coord& p : dirBliz[2]) { if (!--p.first)         p.first  = maxX - 1;  blizzards.insert(p); }
-    for (Coord& p : dirBliz[3]) { if (++p.first == maxX)  p.first  = 1;         blizzards.insert(p); }
+    // right, left, up, down;
+    for (Coord& p : dirBliz[0]) { if (++p.first == maxX)  p.first  = 1;         blizzards.insert(p); }
+    for (Coord& p : dirBliz[1]) { if (!--p.first)         p.first  = maxX - 1;	blizzards.insert(p); }
+    for (Coord& p : dirBliz[2]) { if (!--p.second)        p.second = maxY - 1;  blizzards.insert(p); }
+    for (Coord& p : dirBliz[3]) { if (++p.second == maxY) p.second = 1;         blizzards.insert(p); }
 
     for (Coord coord : curr)
       for (auto& delta : MOVES)
@@ -62,24 +63,24 @@ uint64_t adventDay24problem12022(std::ifstream& input)
   std::vector<std::string> in = parseInput(input, '\n');
   for(auto& s : in)
   {
-    if (!maxX++)
+    if (!maxY++)
     {
       start = { 0, (int)s.find('.') };
-      maxY = s.size() - 1;
+      maxX = s.size() - 1;
     }
     else
       for (int i = 1; i < s.size() - 1; ++i)
         switch (s[i])
         {
-          case '>': dirBliz[0].push_back({ maxX - 1, i }); break;
-          case '<': dirBliz[1].push_back({ maxX - 1, i }); break;
-          case '^': dirBliz[2].push_back({ maxX - 1, i }); break;
-          case 'v': dirBliz[3].push_back({ maxX - 1, i }); break;
-          case '.': goal = { maxX - 1, i };
+          case '>': dirBliz[0].push_back({ i, maxY - 1 }); break;
+          case '<': dirBliz[1].push_back({ i, maxY - 1 }); break;
+          case '^': dirBliz[2].push_back({ i, maxY - 1 }); break;
+          case 'v': dirBliz[3].push_back({ i, maxY - 1 }); break;
+          case '.': goal = { i, maxY - 1 };
         }
   }
 
-  Boundaries bound = { 1, --maxX - 1, 1, maxY - 1 };
+  Boundaries bound = { 1, maxX - 1, 1, --maxY - 1 };
 
   score = reachGoal(start, goal, bound, dirBliz, maxX, maxY);
 
@@ -97,24 +98,24 @@ uint64_t adventDay24problem22022(std::ifstream& input)
   std::vector<std::string> in = parseInput(input, '\n');
   for (auto& s : in)
   {
-    if (!maxX++)
+    if (!maxY++)
     {
       start = { 0, (int)s.find('.') };
-      maxY = s.size() - 1;
+      maxX = s.size() - 1;
     }
     else
       for (int i = 1; i < s.size() - 1; ++i)
         switch (s[i])
         {
-          case '>': dirBliz[0].push_back( {maxX - 1, i} ); break;
-          case '<': dirBliz[1].push_back( {maxX - 1, i} ); break;
-          case '^': dirBliz[2].push_back( {maxX - 1, i} ); break;
-          case 'v': dirBliz[3].push_back( {maxX - 1, i} ); break;
-          case '.': goal = { maxX - 1, i };
+          case '>': dirBliz[0].push_back( {i, maxY - 1 }); break;
+          case '<': dirBliz[1].push_back({ i, maxY - 1 }); break;
+          case '^': dirBliz[2].push_back({ i, maxY - 1 }); break;
+          case 'v': dirBliz[3].push_back({ i, maxY - 1 } ); break;
+          case '.': goal = { i, maxY - 1 };
         }
   }
 
-  Boundaries bound = { 1, --maxX - 1, 1, maxY - 1 };
+  Boundaries bound = { 1, maxX - 1, 1, --maxY - 1 };
 
   score  = reachGoal(start, goal, bound, dirBliz, maxX, maxY);
   score += reachGoal(goal, start, bound, dirBliz, maxX, maxY);
