@@ -138,7 +138,9 @@ void paintAdventCalendar2022()
   printf(HGRN"Advent of Code  " WHT"JulyMaker 50" BHYEL"* \n" GRN"\ty(" HGRN"2022" GRN")" reset "\n");
 
 
-  printf(HBLK "@@@@#@@#@#@@@@@@@@@@@@@@#@#@@#@@@@@#@@@##@@@@@@#@" reset "    " "25" BHYEL " " "**" reset "\n");
+  printf(WHT  "    /\\" reset "\n");
+  printf(HRED " - " HBLK"/  \\/\\" HRED"  -    -     -  -    -   -  " HBLK"/\\" HRED"   -     -" reset "\n");
+  printf(HBLK " /\\    \\ \\" YEL"-  - -   -   -    - -  -" HBLK"/\\/  \\" YEL"-   -  - " reset "    " "25" BHYEL " " "**" reset "\n");
   printf(WHT  "/" GRN"@@" WHT"\\   /\\" GRN"#" WHT"\\" GRN"@@@@@##@@@#@@@@###@@@@@#@@@###@@@##@@@" reset "    " "24" BHYEL " " "**" reset "\n");
   printf(GRN  "#@@.' '.@@#" HGRN"@#@@@@@" BGRN"@@@@@@#@@" GRN"#@@#|@@@#" HGRN"@@#@@@" BGRN"@#@@@@#" reset "    " "23" BHYEL " " "**" reset "\n");
   printf(GRN  "#@@'. .'#@@@" YEL"." GRN"##@#@@@@@@##@@@##@@#@@##@@@#" WHT"()))" GRN"@@@@" reset "    " "22" BHYEL " " "**" reset "\n");
