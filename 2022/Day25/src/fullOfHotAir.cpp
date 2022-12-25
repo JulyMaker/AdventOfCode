@@ -64,7 +64,7 @@ uint64_t adventDay25problem22022(std::ifstream& input)
 int main(int argc, char *argv[])
 {
   // argv contain *.txt path
-  int problem = 1;
+  int problem = 2;
   std::string day = "25";
   const bool EXAMPLE = false;
 
