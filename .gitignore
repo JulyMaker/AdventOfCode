@@ -354,3 +354,5 @@ MigrationBackup/
 # Ionide (cross platform F# VS Code tools) working folder
 .ionide/
 /2022/utils/paths.h
+/2023/inputs/cookie
+/2023/utils/paths.h
