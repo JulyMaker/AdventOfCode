@@ -7,10 +7,11 @@ project(${TARGET_NAME})
 include_directories(include)
 include_directories(".")
 include_directories(../utils)
+include_directories(../inputs)
 
 file(GLOB INCLUDES "include/*.h")
 #However, the file(GLOB...) allows for wildcard additions:
-file(GLOB SOURCES "src/*.cpp" "*.cpp" "../utils/*.cpp")
+file(GLOB SOURCES "src/*.cpp" "*.cpp" "../utils/*.cpp" "../inputs/accesoInput.py")
 
 add_library(advOCode2023 ${SOURCES} ${INCLUDES})
 add_executable(${TARGET_NAME} ${SOURCES} ${INCLUDES})

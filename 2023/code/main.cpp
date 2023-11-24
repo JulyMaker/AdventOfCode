@@ -4,16 +4,21 @@
 
 int main(int argc, char *argv[])
 {
-  // argv contain *.txt path
+  // argv contain inputFile and problem
   int problem = 1;
-  const std::string day = "01";
+  const std::string DAY = "01";
   const bool EXAMPLE = false;
-  const std::string FUNCTIONNAME = "adventDay" + day + "P" + std::to_string(problem) + "2023";
+  
+  const std::string YEAR = "2023";
+  const std::string FUNCTIONNAME = "adventDay" + DAY + "P" + std::to_string(problem) + YEAR;
 
-  std::string fileName = (EXAMPLE) ? DAY_EXAMPLE_PATH(day) : DAY_PATH(day);
+  std::string fileName = (EXAMPLE) ? DAY_EXAMPLE_PATH(DAY) : DAY_PATH(DAY);
 
+  /* CONTROL */
   if (!mainControl(argc, argv, problem, fileName)) return -1;
+  if(!EXAMPLE) if(!inputControl(DAY, YEAR, fileName)) return -1;
 
+  /* PROGRAM */
   std::ifstream inputFile(fileName);
   uint64_t result = 0;
 

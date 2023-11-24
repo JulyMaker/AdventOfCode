@@ -198,37 +198,6 @@ int64_t vectorToInt(std::vector<int>& vector, int offset1 = 0, int offset2 = 0)
     return result;
 }
 
-bool mainControl(int argc, char* argv[], int& problem, std::string& fileName)
-{
-    if (argc == 2)
-    {
-        if ((std::stoi(argv[1]) == 1) || (std::stoi(argv[1]) == 2))
-            problem = std::stoi(argv[1]);
-        else
-        {
-            std::cout << "Problem 1 or 2" << std::endl;
-            return false;
-        }
-    }
-    else if (argc == 3)
-    {
-        fileName = argv[1];
-        if ((std::stoi(argv[2]) == 1) || (std::stoi(argv[2]) == 2))
-            problem = std::stoi(argv[2]);
-        else
-        {
-            std::cout << "Problem 1 or 2" << std::endl;
-            return false;
-        }
-    }
-    else if (argc != 1)
-    {
-        std::cout << "ERROR: problem number missing" << std::endl;
-        return false;
-    }
-
-    return true;
-}
 
 void readInput05(std::ifstream& infile, std::vector<std::stack<char>>& crane, std::vector<std::vector<int>>& moves)
 {
@@ -353,6 +322,70 @@ void readInput11(std::ifstream& infile, std::vector<monckey>& monkeys)
             monkeys[monckeyId].test[2] = stoi(m[1]);;
         }
     }
+}
+
+bool mainControl(int argc, char* argv[], int& problem, std::string& fileName)
+{
+    if (argc == 2)
+    {
+        if ((std::stoi(argv[1]) == 1) || (std::stoi(argv[1]) == 2))
+            problem = std::stoi(argv[1]);
+        else
+        {
+            std::cout << "Problem 1 or 2" << std::endl;
+            return false;
+        }
+    }
+    else if (argc == 3)
+    {
+        fileName = argv[1];
+        if ((std::stoi(argv[2]) == 1) || (std::stoi(argv[2]) == 2))
+            problem = std::stoi(argv[2]);
+        else
+        {
+            std::cout << "Problem 1 or 2" << std::endl;
+            return false;
+        }
+    }
+    else if (argc != 1)
+    {
+        std::cout << "ERROR: problem number missing" << std::endl;
+        return false;
+    }
+
+    return true;
+}
+
+
+bool inputControl(const std::string& day, const std::string& year, std::string& fileName)
+{
+    std::ifstream cookieFile(COOKIE_PATH());
+    const std::string COOKIE = parseLine(cookieFile);
+
+    std::filesystem::path inputFile(fileName);
+    std::string urlAOC = "https://adventofcode.com/" + year + "/day/" + std::to_string(std::stoi(day)) + "/input";
+
+    if (!std::filesystem::exists(inputFile))
+    {
+        // Llama al script de Python usando el comando del sistema
+        // py script url inputFile cookieFile
+        std::string pythonScript = "py " + (std::string)SCRIPT_PATH() + " " + urlAOC + " " + fileName + " " +COOKIE;
+        int resultado = std::system(pythonScript.c_str());
+        
+        // Verifica si la llamada al sistema fue exitosa
+        if (resultado == 0)
+        {
+            std::cout << "Input added." << std::endl;
+            return true;
+        }
+        else
+        {
+            std::cerr << "Error " + std::to_string(resultado) + " in Python script." << std::endl;
+            return false;
+        }
+    }
+
+    return true;
 }
 
 template <typename T1, typename T2>

@@ -29,13 +29,15 @@ std::vector<std::string> splitS(const std::string& text, const std::string& deli
 
 int64_t vectorToInt(std::vector<int>& vector, int offset1, int offset2);
 
-bool mainControl(int argc, char* argv[], int& problem, std::string& fileName);
-
 void readInput05(std::ifstream& infile, std::vector<std::stack<char>>& crane, std::vector<std::vector<int>>& moves);
 
 struct monckey;
 
 void readInput11(std::ifstream& infile, std::vector<monckey>& monkeys);
+
+bool mainControl(int argc, char* argv[], int& problem, std::string& fileName);
+
+bool inputControl(const std::string& day, const std::string& year, std::string& fileName);
 
 template <typename T1, typename T2>
 struct PointHash;
