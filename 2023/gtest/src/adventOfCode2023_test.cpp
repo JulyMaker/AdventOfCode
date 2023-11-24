@@ -2,17 +2,26 @@
 #include <gtest/gtest.h>
 #include <days.h>
 
-const std::string year = "2023";
+
+std::ifstream& getData(const std::string& testName, std::string& funcName1, std::string& funcName2)
+{
+   const std::string year = "2023";
+   const std::string day = testName.substr(testName.size() - 2, 2);
+
+   funcName1 = "adventDay" + day + "P1" + year;
+   funcName2 = "adventDay" + day + "P2" + year;
+
+   std::string fileName = DAY_EXAMPLE_PATH(day);
+   std::ifstream inputFile(fileName);
+
+   return inputFile;
+}
 TEST(AdventOfCode2023, advOcodeD_01)
 {
   const std::string testName = testing::UnitTest::GetInstance()->current_test_info()->name();
-  const std::string day = testName.substr(testName.size() - 2, 2);
+  std::string FUNCTIONNAME1; std::string FUNCTIONNAME2;
 
-  const std::string FUNCTIONNAME1 = "adventDay" + day + "P1" + year;
-  const std::string FUNCTIONNAME2 = "adventDay" + day + "P2" + year;
-
-  std::string fileName = DAY_EXAMPLE_PATH(day);
-  std::ifstream inputFile(fileName);
+  std::ifstream& inputFile = getData(testName, FUNCTIONNAME1, FUNCTIONNAME2);
 
   EXPECT_EQ(0, launchProblem[FUNCTIONNAME1](inputFile));
   EXPECT_EQ(0, launchProblem[FUNCTIONNAME2](inputFile));
@@ -21,13 +30,9 @@ TEST(AdventOfCode2023, advOcodeD_01)
 TEST(AdventOfCode2023, advOcodeD_02)
 {
     const std::string testName = testing::UnitTest::GetInstance()->current_test_info()->name();
-    const std::string day = testName.substr(testName.size() - 2, 2);
+    std::string FUNCTIONNAME1; std::string FUNCTIONNAME2;
 
-    const std::string FUNCTIONNAME1 = "adventDay" + day + "P1" + year;
-    const std::string FUNCTIONNAME2 = "adventDay" + day + "P2" + year;
-
-    std::string fileName = DAY_EXAMPLE_PATH(day);
-    std::ifstream inputFile(fileName);
+    std::ifstream& inputFile = getData(testName, FUNCTIONNAME1, FUNCTIONNAME2);
 
     EXPECT_EQ(0, launchProblem[FUNCTIONNAME1](inputFile));
     EXPECT_EQ(0, launchProblem[FUNCTIONNAME2](inputFile));
@@ -36,13 +41,9 @@ TEST(AdventOfCode2023, advOcodeD_02)
 TEST(AdventOfCode2023, advOcodeD_03)
 {
     const std::string testName = testing::UnitTest::GetInstance()->current_test_info()->name();
-    const std::string day = testName.substr(testName.size() - 2, 2);
+    std::string FUNCTIONNAME1; std::string FUNCTIONNAME2;
 
-    const std::string FUNCTIONNAME1 = "adventDay" + day + "P1" + year;
-    const std::string FUNCTIONNAME2 = "adventDay" + day + "P2" + year;
-
-    std::string fileName = DAY_EXAMPLE_PATH(day);
-    std::ifstream inputFile(fileName);
+    std::ifstream& inputFile = getData(testName, FUNCTIONNAME1, FUNCTIONNAME2);
 
     EXPECT_EQ(0, launchProblem[FUNCTIONNAME1](inputFile));
     EXPECT_EQ(0, launchProblem[FUNCTIONNAME2](inputFile));
@@ -51,13 +52,9 @@ TEST(AdventOfCode2023, advOcodeD_03)
 TEST(AdventOfCode2023, advOcodeD_04)
 {
     const std::string testName = testing::UnitTest::GetInstance()->current_test_info()->name();
-    const std::string day = testName.substr(testName.size() - 2, 2);
+    std::string FUNCTIONNAME1; std::string FUNCTIONNAME2;
 
-    const std::string FUNCTIONNAME1 = "adventDay" + day + "P1" + year;
-    const std::string FUNCTIONNAME2 = "adventDay" + day + "P2" + year;
-
-    std::string fileName = DAY_EXAMPLE_PATH(day);
-    std::ifstream inputFile(fileName);
+    std::ifstream& inputFile = getData(testName, FUNCTIONNAME1, FUNCTIONNAME2);
 
     EXPECT_EQ(0, launchProblem[FUNCTIONNAME1](inputFile));
     EXPECT_EQ(0, launchProblem[FUNCTIONNAME2](inputFile));
@@ -66,13 +63,9 @@ TEST(AdventOfCode2023, advOcodeD_04)
 TEST(AdventOfCode2023, advOcodeD_05)
 {
     const std::string testName = testing::UnitTest::GetInstance()->current_test_info()->name();
-    const std::string day = testName.substr(testName.size() - 2, 2);
+    std::string FUNCTIONNAME1; std::string FUNCTIONNAME2;
 
-    const std::string FUNCTIONNAME1 = "adventDay" + day + "P1" + year;
-    const std::string FUNCTIONNAME2 = "adventDay" + day + "P2" + year;
-
-    std::string fileName = DAY_EXAMPLE_PATH(day);
-    std::ifstream inputFile(fileName);
+    std::ifstream& inputFile = getData(testName, FUNCTIONNAME1, FUNCTIONNAME2);
 
     EXPECT_EQ(0, launchProblem[FUNCTIONNAME1](inputFile));
     EXPECT_EQ(0, launchProblem[FUNCTIONNAME2](inputFile));
@@ -81,13 +74,9 @@ TEST(AdventOfCode2023, advOcodeD_05)
 TEST(AdventOfCode2023, advOcodeD_06)
 {
     const std::string testName = testing::UnitTest::GetInstance()->current_test_info()->name();
-    const std::string day = testName.substr(testName.size() - 2, 2);
+    std::string FUNCTIONNAME1; std::string FUNCTIONNAME2;
 
-    const std::string FUNCTIONNAME1 = "adventDay" + day + "P1" + year;
-    const std::string FUNCTIONNAME2 = "adventDay" + day + "P2" + year;
-
-    std::string fileName = DAY_EXAMPLE_PATH(day);
-    std::ifstream inputFile(fileName);
+    std::ifstream& inputFile = getData(testName, FUNCTIONNAME1, FUNCTIONNAME2);
 
     EXPECT_EQ(0, launchProblem[FUNCTIONNAME1](inputFile));
     EXPECT_EQ(0, launchProblem[FUNCTIONNAME2](inputFile));
@@ -96,13 +85,9 @@ TEST(AdventOfCode2023, advOcodeD_06)
 TEST(AdventOfCode2023, advOcodeD_07)
 {
     const std::string testName = testing::UnitTest::GetInstance()->current_test_info()->name();
-    const std::string day = testName.substr(testName.size() - 2, 2);
+    std::string FUNCTIONNAME1; std::string FUNCTIONNAME2;
 
-    const std::string FUNCTIONNAME1 = "adventDay" + day + "P1" + year;
-    const std::string FUNCTIONNAME2 = "adventDay" + day + "P2" + year;
-
-    std::string fileName = DAY_EXAMPLE_PATH(day);
-    std::ifstream inputFile(fileName);
+    std::ifstream& inputFile = getData(testName, FUNCTIONNAME1, FUNCTIONNAME2);
 
     EXPECT_EQ(0, launchProblem[FUNCTIONNAME1](inputFile));
     EXPECT_EQ(0, launchProblem[FUNCTIONNAME2](inputFile));
@@ -111,13 +96,9 @@ TEST(AdventOfCode2023, advOcodeD_07)
 TEST(AdventOfCode2023, advOcodeD_08)
 {
     const std::string testName = testing::UnitTest::GetInstance()->current_test_info()->name();
-    const std::string day = testName.substr(testName.size() - 2, 2);
+    std::string FUNCTIONNAME1; std::string FUNCTIONNAME2;
 
-    const std::string FUNCTIONNAME1 = "adventDay" + day + "P1" + year;
-    const std::string FUNCTIONNAME2 = "adventDay" + day + "P2" + year;
-
-    std::string fileName = DAY_EXAMPLE_PATH(day);
-    std::ifstream inputFile(fileName);
+    std::ifstream& inputFile = getData(testName, FUNCTIONNAME1, FUNCTIONNAME2);
 
     EXPECT_EQ(0, launchProblem[FUNCTIONNAME1](inputFile));
     EXPECT_EQ(0, launchProblem[FUNCTIONNAME2](inputFile));
@@ -126,13 +107,9 @@ TEST(AdventOfCode2023, advOcodeD_08)
 TEST(AdventOfCode2023, advOcodeD_09)
 {
     const std::string testName = testing::UnitTest::GetInstance()->current_test_info()->name();
-    const std::string day = testName.substr(testName.size() - 2, 2);
+    std::string FUNCTIONNAME1; std::string FUNCTIONNAME2;
 
-    const std::string FUNCTIONNAME1 = "adventDay" + day + "P1" + year;
-    const std::string FUNCTIONNAME2 = "adventDay" + day + "P2" + year;
-
-    std::string fileName = DAY_EXAMPLE_PATH(day);
-    std::ifstream inputFile(fileName);
+    std::ifstream& inputFile = getData(testName, FUNCTIONNAME1, FUNCTIONNAME2);
 
     EXPECT_EQ(0, launchProblem[FUNCTIONNAME1](inputFile));
     EXPECT_EQ(0, launchProblem[FUNCTIONNAME2](inputFile));
