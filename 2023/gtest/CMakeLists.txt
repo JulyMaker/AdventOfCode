@@ -1,20 +1,21 @@
-cmake_minimum_required(VERSION 2.8.9)
+cmake_minimum_required(VERSION 3.11.0)
 
 set(TARGET_NAME adventOfCode2023_test)
 project(${TARGET_NAME})
 
-#Bring the headers, such as Student.h into the project
+
 include_directories(include)
-include_directories(../code/include)
 include_directories(../utils)
+include_directories(../code/include)
 
 file(GLOB INCLUDES "include/*.h")
-#However, the file(GLOB...) allows for wildcard additions:
 file(GLOB SOURCES "src/*.cpp")
 
 ################################
 # GTest
 ################################
+set( gtest_force_shared_crt ON CACHE BOOL "Always use msvcrt.dll" FORCE)
+
 add_subdirectory(./gtest-1.8.1)
 enable_testing()
 
