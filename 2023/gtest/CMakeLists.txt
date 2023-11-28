@@ -16,7 +16,7 @@ file(GLOB SOURCES "src/*.cpp")
 ################################
 set( gtest_force_shared_crt ON CACHE BOOL "Always use msvcrt.dll" FORCE)
 
-add_subdirectory(./gtest-1.8.1)
+add_subdirectory(./googletest-1.14.0)
 enable_testing()
 
 include_directories(${gtest_SOURCE_DIR}/include ${gtest_SOURCE_DIR})
