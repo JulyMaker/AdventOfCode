@@ -9,7 +9,7 @@ include_directories(../include/auxi)
 include_directories(../utils)
 include_directories(../inputs)
 
-file(GLOB INCLUDES "include/*.h" "include/auxi/*.h" "../utils/*.h")
+file(GLOB INCLUDES "include/*.h" "include/auxi/*.h" "../utils/*.h" "../utils/*.h.in")
 file(GLOB SOURCES "src/*.cpp" "src/auxi/*.cpp" "../utils/*.cpp" "../inputs/accesoInput.py")
 
 
