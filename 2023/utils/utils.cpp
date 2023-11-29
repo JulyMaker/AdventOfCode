@@ -415,7 +415,3 @@ void readInput11_2022(std::ifstream& infile, std::vector<monckey>& monkeys)
     }
 }
 
-
-
-
-
