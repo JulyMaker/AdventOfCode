@@ -1,5 +1,17 @@
 #include <utils.h>
 
+/* Parser input methods */
+
+std::string parseLine(std::ifstream& input)
+{
+    std::string line;
+
+    std::getline(input, line);
+    input.close();
+
+    return line;
+}
+
 std::vector<std::string> parseInput(std::ifstream& input, const char c)
 {
     std::vector<std::string> output;
@@ -37,25 +49,6 @@ std::vector<std::vector<char>> parseInputChars(std::ifstream& input)
     return map;
 }
 
-std::vector<std::vector<int>> parseInputGrid(std::ifstream& input)
-{
-    std::string line;
-    std::vector<std::vector<int>> map;
-    std::vector<int> aux;
-
-    while (std::getline(input, line))
-    {
-        for (int i = 0; i < line.size(); i++)
-        {
-            aux.push_back(line[i] - '0');
-        }
-        map.push_back(aux);
-        aux.clear();
-    }
-
-    return map;
-}
-
 std::vector<int> parseInputInt(std::ifstream& input, const char c)
 {
     std::vector<int> output;
@@ -72,16 +65,6 @@ std::vector<int> parseInputInt(std::ifstream& input, const char c)
     input.close();
 
     return output;
-}
-
-std::string parseLine(std::ifstream& input)
-{
-    std::string line;
-
-    std::getline(input, line);
-    input.close();
-
-    return line;
 }
 
 std::vector<int> parseCharToChar(std::ifstream& input)
@@ -116,6 +99,25 @@ std::vector<int64_t> parseInputInt64(std::ifstream& input, const char c)
     return output;
 }
 
+std::vector<std::vector<int>> parseInputGrid(std::ifstream& input)
+{
+    std::string line;
+    std::vector<std::vector<int>> map;
+    std::vector<int> aux;
+
+    while (std::getline(input, line))
+    {
+        for (int i = 0; i < line.size(); i++)
+        {
+            aux.push_back(line[i] - '0');
+        }
+        map.push_back(aux);
+        aux.clear();
+    }
+
+    return map;
+}
+
 template<class T>
 std::vector<T> parseInput(std::ifstream& is)
 {
@@ -123,6 +125,9 @@ std::vector<T> parseInput(std::ifstream& is)
 
     return data;
 }
+
+
+/* Parser input with reg */
 
 std::vector<std::string> parseInputReg(std::ifstream& infile, std::string rex)
 {
@@ -154,6 +159,9 @@ std::vector<std::string> parseInputReg(std::string& s, std::string rex)
 
     return output;
 }
+
+
+/* Split Methods */
 
 std::vector<int> splitI(const std::string& text, const std::string& delims)
 {
@@ -187,6 +195,75 @@ std::vector<std::string> splitS(const std::string& text, const std::string& deli
     return tokens;
 }
 
+
+/* Control Methods */
+
+bool mainControl(int argc, char* argv[], int& problem, std::string& fileName)
+{
+    if (argc == 2)
+    {
+        if ((std::stoi(argv[1]) == 1) || (std::stoi(argv[1]) == 2))
+            problem = std::stoi(argv[1]);
+        else
+        {
+            std::cout << "Problem 1 or 2" << std::endl;
+            return false;
+        }
+    }
+    else if (argc == 3)
+    {
+        fileName = argv[1];
+        if ((std::stoi(argv[2]) == 1) || (std::stoi(argv[2]) == 2))
+            problem = std::stoi(argv[2]);
+        else
+        {
+            std::cout << "Problem 1 or 2" << std::endl;
+            return false;
+        }
+    }
+    else if (argc != 1)
+    {
+        std::cout << "ERROR: problem number missing" << std::endl;
+        return false;
+    }
+
+    return true;
+}
+
+bool inputControl(const std::string& day, const std::string& year, std::string& fileName)
+{
+    std::ifstream cookieFile(COOKIE_PATH());
+    const std::string COOKIE = parseLine(cookieFile);
+
+    std::filesystem::path inputFile(fileName);
+    std::string urlAOC = "https://adventofcode.com/" + year + "/day/" + std::to_string(std::stoi(day)) + "/input";
+
+    if (!std::filesystem::exists(inputFile))
+    {
+        // Llama al script de Python usando el comando del sistema
+        // py script url inputFile cookieFile
+        std::string pythonScript = "py " + (std::string)SCRIPT_PATH() + " " + urlAOC + " " + fileName + " " + COOKIE;
+        int resultado = std::system(pythonScript.c_str());
+
+        // Verifica si la llamada al sistema fue exitosa
+        if (resultado == 0)
+        {
+            std::cout << "Input added." << std::endl;
+            return true;
+        }
+        else
+        {
+            std::cerr << "Error " + std::to_string(resultado) + " in Python script." << std::endl;
+            return false;
+        }
+    }
+
+    return true;
+}
+
+
+/* auxiliar Methods */
+
 int64_t vectorToInt(std::vector<int>& vector, int offset1 = 0, int offset2 = 0)
 {
     if (offset2 == 0) offset2 = vector.size();
@@ -199,7 +276,35 @@ int64_t vectorToInt(std::vector<int>& vector, int offset1 = 0, int offset2 = 0)
 }
 
 
-void readInput05(std::ifstream& infile, std::vector<std::stack<char>>& crane, std::vector<std::vector<int>>& moves)
+/* Hash Auxiliar */
+
+template <typename T1, typename T2>
+struct PointHash
+{
+    size_t operator()(const std::pair<T1, T2>& p) const {
+
+        return p.first * p.second;
+    }
+};
+
+
+/* Other Years */
+
+struct monckey
+{
+    int id;
+    std::vector<int> items;
+    std::vector<std::string> op;
+    std::vector<int> test = { 0, 0, 0 };
+    uint64_t inspects = 0;
+
+    //static bool monckeySort(monckey const& m1, monckey const& m2)
+    //{
+    //  return m1.inspects > m2.inspects;
+    //}
+};
+
+void readInput05_2022(std::ifstream& infile, std::vector<std::stack<char>>& crane, std::vector<std::vector<int>>& moves)
 {
     std::vector<std::vector<char>> stackAux;
     //std::regex pattern1 = std::regex{ "[\\[(\\w))\\]\\s|\\s\\s\\s\\s]+\\[(\\w)\\]|\\s\\s\\s" };
@@ -256,21 +361,7 @@ void readInput05(std::ifstream& infile, std::vector<std::stack<char>>& crane, st
     }
 }
 
-struct monckey
-{
-    int id;
-    std::vector<int> items;
-    std::vector<std::string> op;
-    std::vector<int> test = { 0, 0, 0 };
-    uint64_t inspects = 0;
-
-    //static bool monckeySort(monckey const& m1, monckey const& m2)
-    //{
-    //  return m1.inspects > m2.inspects;
-    //}
-};
-
-void readInput11(std::ifstream& infile, std::vector<monckey>& monkeys)
+void readInput11_2022(std::ifstream& infile, std::vector<monckey>& monkeys)
 {
     std::vector<std::vector<char>> stackAux;
     std::regex pattern1 = std::regex{ "Monkey (\\d+):" };
@@ -324,75 +415,7 @@ void readInput11(std::ifstream& infile, std::vector<monckey>& monkeys)
     }
 }
 
-bool mainControl(int argc, char* argv[], int& problem, std::string& fileName)
-{
-    if (argc == 2)
-    {
-        if ((std::stoi(argv[1]) == 1) || (std::stoi(argv[1]) == 2))
-            problem = std::stoi(argv[1]);
-        else
-        {
-            std::cout << "Problem 1 or 2" << std::endl;
-            return false;
-        }
-    }
-    else if (argc == 3)
-    {
-        fileName = argv[1];
-        if ((std::stoi(argv[2]) == 1) || (std::stoi(argv[2]) == 2))
-            problem = std::stoi(argv[2]);
-        else
-        {
-            std::cout << "Problem 1 or 2" << std::endl;
-            return false;
-        }
-    }
-    else if (argc != 1)
-    {
-        std::cout << "ERROR: problem number missing" << std::endl;
-        return false;
-    }
-
-    return true;
-}
 
 
-bool inputControl(const std::string& day, const std::string& year, std::string& fileName)
-{
-    std::ifstream cookieFile(COOKIE_PATH());
-    const std::string COOKIE = parseLine(cookieFile);
 
-    std::filesystem::path inputFile(fileName);
-    std::string urlAOC = "https://adventofcode.com/" + year + "/day/" + std::to_string(std::stoi(day)) + "/input";
 
-    if (!std::filesystem::exists(inputFile))
-    {
-        // Llama al script de Python usando el comando del sistema
-        // py script url inputFile cookieFile
-        std::string pythonScript = "py " + (std::string)SCRIPT_PATH() + " " + urlAOC + " " + fileName + " " +COOKIE;
-        int resultado = std::system(pythonScript.c_str());
-        
-        // Verifica si la llamada al sistema fue exitosa
-        if (resultado == 0)
-        {
-            std::cout << "Input added." << std::endl;
-            return true;
-        }
-        else
-        {
-            std::cerr << "Error " + std::to_string(resultado) + " in Python script." << std::endl;
-            return false;
-        }
-    }
-
-    return true;
-}
-
-template <typename T1, typename T2>
-struct PointHash
-{
-    size_t operator()(const std::pair<T1, T2>& p) const {
-
-        return p.first * p.second;
-    }
-};
