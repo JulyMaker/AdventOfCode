@@ -3,13 +3,12 @@ cmake_minimum_required(VERSION 3.11.0)
 set(TARGET_NAME adventOfCode2023)
 project(${TARGET_NAME})
 
-include_directories(".")
 include_directories(include)
 include_directories(../include/auxi)
 include_directories(../utils)
 include_directories(../inputs)
 
-file(GLOB INCLUDES "include/*.h" "include/auxi/*.h" "../utils/*.h")
+file(GLOB INCLUDES "include/*.h" "include/auxi/*.h" "../utils/*.h" "../utils/*.h.in")
 file(GLOB SOURCES "src/*.cpp" "src/auxi/*.cpp" "../utils/*.cpp" "../inputs/accesoInput.py")
 
 
