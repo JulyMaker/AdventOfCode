@@ -122,7 +122,7 @@ uint64_t adventDay03P22023(std::ifstream& input)
     {
         for (int y = 0; y < COLLIMIT; y++)
         {
-            if (grid[x][y] != '.' && !std::isdigit(grid[x][y]))
+            if (grid[x][y] == '*')
             {
                 score += getGears(grid, ROWLIMIT, COLLIMIT, x, y);
             }
