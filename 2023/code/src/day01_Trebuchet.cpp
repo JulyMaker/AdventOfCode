@@ -4,8 +4,6 @@
 uint64_t adventDay01P12023(std::ifstream& input)
 {
     uint64_t score = 0;
-    std::string result;
-
 
     std::vector<std::string> in = parseInput(input, '\n');
     uint8_t firstN = 0, lastN = 0;
@@ -44,8 +42,6 @@ uint64_t adventDay01P12023(std::ifstream& input)
         score += 10 * firstN + lastN;
     }
 
-    result = std::to_string(score);
-    std::cout << "El resultado es: " << result << std::endl;
     return score;
 }
 
@@ -58,7 +54,6 @@ bool isNumber(std::string s, std::vector<std::string>& sol, const std::string re
 uint64_t adventDay01P22023(std::ifstream& input)
 {
     uint64_t score = 0;
-    std::string result;
 
     std::vector<std::string> in = parseInput(input, '\n');
     uint8_t firstN = 0, lastN = 0;
@@ -116,8 +111,5 @@ uint64_t adventDay01P22023(std::ifstream& input)
         score += 10 * firstN + lastN;
     }
 
- 
-    result = std::to_string(score);
-    std::cout << "El resultado es: " << result << std::endl;
     return score;
 }

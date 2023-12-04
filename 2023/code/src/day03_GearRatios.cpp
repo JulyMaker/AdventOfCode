@@ -42,7 +42,6 @@ uint64_t getSum(std::vector<std::vector<char>>& grid, const int ROWLIMIT, const 
 uint64_t adventDay03P12023(std::ifstream& input)
 {
     uint64_t score = 0;
-    std::string result;
 
     std::vector<std::vector<char>> grid = parseInputChars(input);
     const int ROWLIMIT = grid.size();
@@ -59,9 +58,6 @@ uint64_t adventDay03P12023(std::ifstream& input)
         }
     }
         
-
-    result = std::to_string(score);
-    std::cout << "El resultado es: " << result << std::endl;
     return score;
 }
 
@@ -112,7 +108,6 @@ uint64_t getGears(std::vector<std::vector<char>>& grid, const int ROWLIMIT, cons
 uint64_t adventDay03P22023(std::ifstream& input)
 {
     uint64_t score = 0;
-    std::string result;
 
     std::vector<std::vector<char>> grid = parseInputChars(input);
     const int ROWLIMIT = grid.size();
@@ -129,7 +124,5 @@ uint64_t adventDay03P22023(std::ifstream& input)
         }
     }
 
-    result = std::to_string(score);
-    std::cout << "El resultado es: " << result << std::endl;
     return score;
 }

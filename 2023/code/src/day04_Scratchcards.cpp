@@ -11,7 +11,6 @@ void getCard(const std::vector<std::string>& scratchcards, const int id, std::ve
 uint64_t adventDay04P12023(std::ifstream& input)
 {
     uint64_t score = 0;
-    std::string result;
 
     std::vector<int> win, numbers;
     std::vector<std::string> cards = parseInputReg(input, "Card .*: (.*) \\| (.*)");
@@ -26,8 +25,6 @@ uint64_t adventDay04P12023(std::ifstream& input)
         score+= (intersection.size() == 0)? 0 : std::pow(2, intersection.size()-1);
     }
 
-    result = std::to_string(score);
-    std::cout << "El resultado es: " << result << std::endl;
     return score;
 }
 
@@ -35,7 +32,6 @@ uint64_t adventDay04P12023(std::ifstream& input)
 uint64_t adventDay04P22023(std::ifstream& input)
 {
     uint64_t score = 0;
-    std::string result;
 
     std::vector<int> win, numbers;
     std::vector<std::string> scratchcards = parseInputReg(input, "Card .*: (.*) \\| (.*)");
@@ -58,7 +54,5 @@ uint64_t adventDay04P22023(std::ifstream& input)
        score+= cardsCopies[cardId];
     }
 
-    result = std::to_string(score);
-    std::cout << "El resultado es: " << result << std::endl;
     return score;
 }

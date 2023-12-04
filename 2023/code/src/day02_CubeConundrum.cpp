@@ -3,7 +3,6 @@
 uint64_t adventDay02P12023(std::ifstream& input)
 {
     uint64_t score = 0;
-    std::string result;
     
     const int REDCUBES = 12, GREENCUBES = 13, BLUECUBES = 14;
     std::map<std::string, int> colours =
@@ -38,15 +37,12 @@ uint64_t adventDay02P12023(std::ifstream& input)
         if (valid) score += id;
     }
 
-    result = std::to_string(score);
-    std::cout << "El resultado es: " << result << std::endl;
     return score;
 }
 
 uint64_t adventDay02P22023(std::ifstream& input)
 {
     uint64_t score = 0;
-    std::string result;
 
     std::map<std::string, int> colours =
     {
@@ -81,7 +77,5 @@ uint64_t adventDay02P22023(std::ifstream& input)
         score += minRed * minBlue * minGreen;
     }
 
-    result = std::to_string(score);
-    std::cout << "El resultado es: " << result << std::endl;
     return score;
 }
