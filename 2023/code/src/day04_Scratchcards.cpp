@@ -36,7 +36,7 @@ uint64_t adventDay04P12023(std::ifstream& input)
     return score;
 }
 
-using Card  = std::tuple<int, std::vector<int>, std::vector<int>>;
+using Card  = std::tuple<int, std::vector<int>, std::vector<int>>; // Copies, winNumbers, gameNumbers
 using Cards = std::vector<Card>;
 
 void getCard(const std::vector<std::string>& scratchcards, const int id, std::vector<int>& win, std::vector<int>& numbers)
@@ -89,7 +89,7 @@ uint64_t adventDay04P22023(std::ifstream& input)
 
        for (int times = 1; times <= winTimes; times++)
        {
-          std::get<0>(cards[cardId + times]) = std::get<0>(cards[cardId + times]) + std::get<0>(cards[cardId]);
+          std::get<0>(cards[cardId + times])+= std::get<0>(cards[cardId]);
        }
 
        score+= std::get<0>(cards[cardId]);
