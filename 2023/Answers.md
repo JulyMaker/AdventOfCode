@@ -10,3 +10,7 @@ Your puzzle answer was 63307.
 Day 03<br>
 Your puzzle answer was 560670.<br>
 Your puzzle answer was 91622824.
+
+Day 04<br>
+Your puzzle answer was 21158.<br>
+Your puzzle answer was 6050769.
