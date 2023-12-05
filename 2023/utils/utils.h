@@ -21,6 +21,7 @@ std::vector<std::string> parseInputReg(std::string& s, std::string rex);
 
 /* Split Methods */
 std::vector<int> splitI(const std::string& text, const std::string& delims);
+std::vector<uint64_t> splitUInt(const std::string& text, const std::string& delims);
 std::vector<std::string> splitS(const std::string& text, const std::string& delims);
 
 
@@ -37,6 +38,8 @@ int64_t vectorToInt(std::vector<int>& vector, int offset1, int offset2);
 template <typename T1, typename T2>
 struct PointHash;
 
+/* 2023 Year */
+void readInput05_2023(std::ifstream& infile, std::vector<uint64_t>& seeds, std::vector< std::vector<std::tuple<uint64_t, uint64_t, uint64_t>>>& maps);
 
 /* Other Years */
 struct monckey;

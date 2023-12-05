@@ -179,6 +179,22 @@ std::vector<int> splitI(const std::string& text, const std::string& delims)
     return tokens;
 }
 
+std::vector<uint64_t> splitUInt(const std::string& text, const std::string& delims)
+{
+    std::vector<uint64_t> tokens;
+    std::size_t start = text.find_first_not_of(delims), end = 0;
+
+    while ((end = text.find_first_of(delims, start)) != std::string::npos) {
+        if (end != start)
+            tokens.push_back(std::stoll(text.substr(start, end - start)));
+        start = text.find_first_not_of(delims, end);
+    }
+    if (start != std::string::npos)
+        tokens.push_back(std::stoll(text.substr(start)));
+
+    return tokens;
+}
+
 std::vector<std::string> splitS(const std::string& text, const std::string& delims)
 {
     std::vector<std::string> tokens;
@@ -287,6 +303,38 @@ struct PointHash
     }
 };
 
+/* 2023 Year */
+void readInput05_2023(std::ifstream& infile, std::vector<uint64_t>& seeds, std::vector<std::vector<std::tuple<uint64_t, uint64_t, uint64_t>>>& maps)
+{
+    std::regex pattern = std::regex{ "seeds: (.*)" };
+    std::smatch m;
+
+    std::string line; 
+    getline(infile, line);
+    if (regex_match(line, m, pattern))
+        seeds = splitUInt(m[1], " ");
+    getline(infile, line); // Space line
+    getline(infile, line); // Title map
+
+    int index = 0;
+    std::vector<std::tuple<uint64_t, uint64_t, uint64_t>> map;
+    std::tuple<uint64_t, uint64_t, uint64_t> numbers;
+    for (std::string line; getline(infile, line);)
+    {
+        if (line == "") {
+            maps.push_back(map);
+            map.clear();
+            getline(infile, line);
+            continue;
+        }
+
+        std::istringstream iss(line);
+        iss >> std::get<0>(numbers) >> std::get<1>(numbers) >> std::get<2>(numbers);
+        map.push_back(numbers);
+    }
+
+    maps.push_back(map);
+}
 
 /* Other Years */
 

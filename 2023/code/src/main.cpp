@@ -6,7 +6,7 @@ int main(int argc, char *argv[])
 {
   // argv contain inputFile and problem
   int problem = 2;
-  const std::string DAY = "04";
+  const std::string DAY = "05";
   const bool EXAMPLE = false;
   
   const std::string YEAR = "2023";
@@ -30,6 +30,6 @@ int main(int argc, char *argv[])
       std::cout << "The number problem isn't right" << result << std::endl;
   }
 
-  //std::cout << "Answer is: " << result << std::endl;
+  std::cout << "Answer is: " << result << std::endl;
   return 0;
 }
