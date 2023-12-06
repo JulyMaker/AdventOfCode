@@ -18,3 +18,7 @@ Your puzzle answer was 6050769.
 Day 05<br>
 Your puzzle answer was 289863851.<br>
 Your puzzle answer was 60568880.
+
+Day 06<br>
+Your puzzle answer was 227850.<br>
+Your puzzle answer was 42948149.
