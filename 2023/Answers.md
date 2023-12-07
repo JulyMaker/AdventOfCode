@@ -22,3 +22,7 @@ Your puzzle answer was 60568880.
 Day 06<br>
 Your puzzle answer was 227850.<br>
 Your puzzle answer was 42948149.
+
+Day 07<br>
+Your puzzle answer was 253603890.<br>
+Your puzzle answer was 253630098.
