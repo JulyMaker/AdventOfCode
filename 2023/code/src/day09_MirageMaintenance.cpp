@@ -5,23 +5,19 @@ uint64_t adventDay09P12023(std::ifstream& input)
     uint64_t score = 0;
 
     std::vector<std::string> in= parseInput(input, '\n');
-    std::vector<int> differences;
     for (auto& lineStr : in)
     {
         std::vector<int> line = splitI(lineStr, " ");
         bool zero = std::all_of(line.begin(), line.end(), [](int x) { return x == 0; });
         while (!zero)
         {
-            differences.push_back(line.back());
+            score+= line.back();
             for (int i = 0; i < line.size() - 1; i++)
                 line[i] = line[i + 1] - line[i];
 
             line.pop_back();
             zero = std::all_of(line.begin(), line.end(), [](int x) { return x == 0; });
         }  
-
-        score+= std::reduce(differences.begin()+1, differences.end(), differences[0]);
-        differences.clear();
     }
 
     return score;
