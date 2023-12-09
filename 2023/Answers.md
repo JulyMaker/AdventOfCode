@@ -30,3 +30,7 @@ Your puzzle answer was 253630098.
 Day 08<br>
 Your puzzle answer was 15989.<br>
 Your puzzle answer was 13830919117339.
+
+Day 09<br>
+Your puzzle answer was 1806615041.<br>
+Your puzzle answer was 1211.

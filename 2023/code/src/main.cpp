@@ -5,9 +5,9 @@
 int main(int argc, char *argv[])
 {
   // argv contain inputFile and problem
-  int problem = 1;
-  const std::string DAY = "08";
-  const bool EXAMPLE = false;
+  int problem = 2;
+  const std::string DAY = "09";
+  const bool EXAMPLE = true;
   
   const std::string YEAR = "2023";
   const std::string FUNCTIONNAME = "adventDay" + DAY + "P" + std::to_string(problem) + YEAR;
