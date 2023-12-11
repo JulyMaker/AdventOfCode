@@ -214,11 +214,11 @@ std::vector<std::string> splitS(const std::string& text, const std::string& deli
 
 /* Control Methods */
 
-bool mainControl(int argc, char* argv[], int& problem, std::string& fileName)
+bool mainControl(int argc, char* argv[], std::string& fileName, std::string& day, int& problem, bool& example)
 {
     if (argc == 2)
     {
-        if ((std::stoi(argv[1]) == 1) || (std::stoi(argv[1]) == 2))
+        if ((std::stoi(argv[1]) == 1) || (std::stoi(argv[1]) == 2)) // Problem number
             problem = std::stoi(argv[1]);
         else
         {
@@ -228,7 +228,16 @@ bool mainControl(int argc, char* argv[], int& problem, std::string& fileName)
     }
     else if (argc == 3)
     {
-        fileName = argv[1];
+        if (1 <= std::stoi(argv[1]) && std::stoi(argv[1]) <= 25)
+        {
+            day = argv[1];
+        }
+        else
+        {
+            std::cout << "Day between 1 to 25" << std::endl;
+            return false;
+        }
+
         if ((std::stoi(argv[2]) == 1) || (std::stoi(argv[2]) == 2))
             problem = std::stoi(argv[2]);
         else
@@ -236,6 +245,54 @@ bool mainControl(int argc, char* argv[], int& problem, std::string& fileName)
             std::cout << "Problem 1 or 2" << std::endl;
             return false;
         }
+    }
+    else if (argc == 4)
+    {
+        if (1 <= std::stoi(argv[1]) && std::stoi(argv[1]) <= 25)
+        {
+            day = argv[1];
+        }
+        else
+        {
+            std::cout << "Day between 1 to 25" << std::endl;
+            return false;
+        }
+
+        if ((std::stoi(argv[2]) == 1) || (std::stoi(argv[2]) == 2))
+            problem = std::stoi(argv[2]);
+        else
+        {
+            std::cout << "Problem 1 or 2" << std::endl;
+            return false;
+        }
+
+        if (strcmp(argv[3], "true") == 0) example = true;
+        else example = false;
+    }
+    else if (argc == 5)
+    {
+        fileName = argv[1];
+
+        if (1 <= std::stoi(argv[2]) && std::stoi(argv[2]) <= 25)
+        {
+            day = argv[2];
+        }
+        else
+        {
+            std::cout << "Day between 1 to 25" << std::endl;
+            return false;
+        }
+
+        if ((std::stoi(argv[3]) == 1) || (std::stoi(argv[3]) == 2))
+            problem = std::stoi(argv[3]);
+        else
+        {
+            std::cout << "Problem 1 or 2" << std::endl;
+            return false;
+        }
+
+        if (strcmp(argv[4], "true") == 0) example = true;
+        else example = false;
     }
     else if (argc != 1)
     {

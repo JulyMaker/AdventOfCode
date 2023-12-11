@@ -26,7 +26,7 @@ std::vector<std::string> splitS(const std::string& text, const std::string& deli
 
 
 /* Control Methods */
-bool mainControl(int argc, char* argv[], int& problem, std::string& fileName);
+bool mainControl(int argc, char* argv[], std::string& fileName, std::string& day, int& problem, bool& example);
 bool inputControl(const std::string& day, const std::string& year, std::string& fileName);
 
 
