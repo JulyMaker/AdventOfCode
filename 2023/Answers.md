@@ -38,3 +38,7 @@ Your puzzle answer was 1211.
 Day 10<br>
 Your puzzle answer was 6738.<br>
 Your puzzle answer was 579.
+
+Day 11<br>
+Your puzzle answer was 9233514.<br>
+Your puzzle answer was 363293506944.
