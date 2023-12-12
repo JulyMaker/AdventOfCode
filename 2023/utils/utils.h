@@ -1,3 +1,5 @@
+#pragma once
+
 #include <includes.h>
 #include <paths.h>
 
@@ -30,13 +32,42 @@ bool mainControl(int argc, char* argv[], std::string& fileName, std::string& day
 bool inputControl(const std::string& day, const std::string& year, std::string& fileName);
 
 
-/* auxiliar Methods */
+/* Auxiliar Methods */
 int64_t vectorToInt(std::vector<int>& vector, int offset1, int offset2);
 
 
-/* Hash Auxiliar */
+/* Auxiliar Hashes  */
 template <typename T1, typename T2>
-struct PointHash;
+struct PointHash
+{
+    size_t operator()(const std::pair<T1, T2>& p) const {
+
+        return p.first * p.second;
+    }
+};
+
+template <typename T>
+struct std::hash<std::vector<T>> {
+    size_t operator()(const vector<T>& vec) const {
+        size_t hash = 0;
+
+        for (const T& elem : vec) {
+            hash ^= std::hash<T>()(elem) + 0x9e3779b9 + (hash << 6) + (hash >> 2);
+        }
+
+        return hash;
+    }
+};
+
+template <typename T1, typename T2>
+struct std::hash<std::pair<T1, T2>> {
+    size_t operator()(const pair<T1, T2>& p) const {
+        size_t h1 = hash<T1>()(p.first);
+        size_t h2 = hash<T2>()(p.second);
+
+        return h1 ^ (h2 << 1);
+    }
+};
 
 /* 2023 Year */
 void readInput05_2023(std::ifstream& infile, std::vector<uint64_t>& seeds, std::vector< std::vector<std::tuple<uint64_t, uint64_t, uint64_t>>>& maps);

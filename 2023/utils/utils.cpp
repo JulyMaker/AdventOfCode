@@ -349,17 +349,6 @@ int64_t vectorToInt(std::vector<int>& vector, int offset1 = 0, int offset2 = 0)
 }
 
 
-/* Hash Auxiliar */
-
-template <typename T1, typename T2>
-struct PointHash
-{
-    size_t operator()(const std::pair<T1, T2>& p) const {
-
-        return p.first * p.second;
-    }
-};
-
 /* 2023 Year */
 void readInput05_2023(std::ifstream& infile, std::vector<uint64_t>& seeds, std::vector<std::vector<std::tuple<uint64_t, uint64_t, uint64_t>>>& maps)
 {
