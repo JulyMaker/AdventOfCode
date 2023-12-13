@@ -46,3 +46,7 @@ Your puzzle answer was 363293506944.
 Day 12<br>
 Your puzzle answer was 7163.<br>
 Your puzzle answer was 17788038834112.
+
+Day 13<br>
+Your puzzle answer was 34821.<br>
+Your puzzle answer was 36919.

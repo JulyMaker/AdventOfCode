@@ -71,6 +71,7 @@ struct std::hash<std::pair<T1, T2>> {
 
 /* 2023 Year */
 void readInput05_2023(std::ifstream& infile, std::vector<uint64_t>& seeds, std::vector< std::vector<std::tuple<uint64_t, uint64_t, uint64_t>>>& maps);
+void readInput13_2023(std::ifstream& infile, std::vector<std::vector<std::string>>& mirrors);
 
 /* Other Years */
 struct monckey;

@@ -382,6 +382,28 @@ void readInput05_2023(std::ifstream& infile, std::vector<uint64_t>& seeds, std::
     maps.push_back(map);
 }
 
+void readInput13_2023(std::ifstream& infile, std::vector<std::vector<std::string>>& mirrors)
+{
+    std::vector<std::string> output;
+    std::string line;
+
+    while (!infile.eof())
+    {
+        std::getline(infile, line);
+        if (line == "")
+        {
+            mirrors.push_back(output);
+            output.clear();
+            continue;
+        }
+        output.push_back(line);
+    }
+
+    if(output.size() > 0) mirrors.push_back(output);
+
+    infile.close();
+}
+
 /* Other Years */
 
 struct monckey
