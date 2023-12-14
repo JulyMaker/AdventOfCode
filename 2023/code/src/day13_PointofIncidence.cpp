@@ -8,7 +8,8 @@ int reflectionLines(const Mirror& mirror)
     for (int x = 0; x < mirror.size() - 1; x++) 
     {
         int incr= 0;
-        while (x - incr >= 0 && x + incr + 1 < mirror.size() && mirror[x - incr] == mirror[x + incr + 1])
+        while (x - incr >= 0 && x + incr + 1 < mirror.size() && 
+               mirror[x - incr] == mirror[x + incr + 1])
             incr++;
 
         if (x - incr + 1 == 0 || x + incr + 1 == mirror.size())
@@ -43,8 +44,10 @@ uint64_t adventDay13P12023(std::ifstream& input)
     return score;
 }
 
-bool fixSmudge(std::string_view row1, std::string_view row2) 
+bool fixSmudge(std::string_view row1, std::string_view row2, bool& fixed) 
 {
+    if (fixed) return false;
+
     bool onediff= false;
     for (int i = 0; i < row1.size(); ++i)
     {
@@ -56,6 +59,7 @@ bool fixSmudge(std::string_view row1, std::string_view row2)
         }
     }
 
+    fixed = true;
     return true;
 }
 
@@ -68,14 +72,11 @@ int reflectionLinesSmudge(const Mirror& mirror)
 
         while (x - incr >= 0 && x + incr + 1 < mirror.size()) 
         {
-            if (mirror[x - incr] == mirror[x + incr + 1]) 
-                incr++;
-            else if (!fixed && fixSmudge(mirror[x - incr], mirror[x + incr + 1])) 
-            {
-                fixed = true;
-                incr++;
-            }else 
+            if (!(mirror[x - incr] == mirror[x + incr + 1]) &&
+                !fixSmudge(mirror[x - incr], mirror[x + incr + 1], fixed))
                 break;
+
+            incr++;
         }
 
         if ((x - incr + 1 == 0 || x + incr + 1 == mirror.size()) && fixed)
