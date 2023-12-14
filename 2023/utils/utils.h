@@ -13,7 +13,10 @@ std::vector<int64_t> parseInputInt64(std::ifstream& input, const char c);
 std::vector<std::vector<int>> parseInputGrid(std::ifstream& input);
 
 template<class T>
-std::vector<T> parseInput(std::ifstream& is);
+std::vector<T> parseInput(std::ifstream& is){
+    std::vector<T> data(std::istream_iterator<T>(is), {});
+    return data;
+}
 
 
 /* Parser input with reg */
@@ -38,10 +41,8 @@ int64_t vectorToInt(std::vector<int>& vector, int offset1, int offset2);
 
 /* Auxiliar Hashes  */
 template <typename T1, typename T2>
-struct PointHash
-{
+struct PointHash{
     size_t operator()(const std::pair<T1, T2>& p) const {
-
         return p.first * p.second;
     }
 };
@@ -50,7 +51,6 @@ template <typename T>
 struct std::hash<std::vector<T>> {
     size_t operator()(const vector<T>& vec) const {
         size_t hash = 0;
-
         for (const T& elem : vec) {
             hash ^= std::hash<T>()(elem) + 0x9e3779b9 + (hash << 6) + (hash >> 2);
         }

@@ -118,14 +118,6 @@ std::vector<std::vector<int>> parseInputGrid(std::ifstream& input)
     return map;
 }
 
-template<class T>
-std::vector<T> parseInput(std::ifstream& is)
-{
-    std::vector<T> data(std::istream_iterator<T>(is), {});
-
-    return data;
-}
-
 
 /* Parser input with reg */
 
