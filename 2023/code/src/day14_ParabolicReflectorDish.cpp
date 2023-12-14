@@ -126,8 +126,7 @@ uint64_t adventDay14P22023(std::ifstream& input)
 
         std::string currentState;
         for (int x = 0; x < in.size(); x++)
-            for (int y=0; y< in[0].size(); y++)
-                currentState+= in[x][y];
+                currentState+= in[x];
 
 
         if (auto repeat = cache.find(currentState); repeat != cache.end())
