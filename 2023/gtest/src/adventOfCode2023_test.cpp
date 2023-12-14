@@ -178,8 +178,8 @@ TEST(AdventOfCode2023, advOcodeD_14)
 
     getData(testName, FUNCTIONNAME1, FUNCTIONNAME2, inputFile1, inputFile2);
 
-    EXPECT_EQ(0, launchProblem[FUNCTIONNAME1](inputFile1));
-    EXPECT_EQ(0, launchProblem[FUNCTIONNAME2](inputFile2));
+    EXPECT_EQ(136, launchProblem[FUNCTIONNAME1](inputFile1));
+    EXPECT_EQ(64, launchProblem[FUNCTIONNAME2](inputFile2));
 }
 
 TEST(AdventOfCode2023, advOcodeD_15)

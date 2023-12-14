@@ -50,3 +50,7 @@ Your puzzle answer was 17788038834112.
 Day 13<br>
 Your puzzle answer was 34821.<br>
 Your puzzle answer was 36919.
+
+Day 14<br>
+Your puzzle answer was 109661.<br>
+Your puzzle answer was 90176.
