@@ -58,3 +58,7 @@ Your puzzle answer was 90176.
 Day 15<br>
 Your puzzle answer was 517015.<br>
 Your puzzle answer was 286104.
+
+Day 16<br>
+Your puzzle answer was 7884.<br>
+Your puzzle answer was 8185.
