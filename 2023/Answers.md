@@ -62,3 +62,7 @@ Your puzzle answer was 286104.
 Day 16<br>
 Your puzzle answer was 7884.<br>
 Your puzzle answer was 8185.
+
+Day 17<br>
+Your puzzle answer was 1013.<br>
+Your puzzle answer was 1215.
