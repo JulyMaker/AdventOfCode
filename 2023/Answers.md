@@ -66,3 +66,7 @@ Your puzzle answer was 8185.
 Day 17<br>
 Your puzzle answer was 1013.<br>
 Your puzzle answer was 1215.
+
+Day 18<br>
+Your puzzle answer was 56923.<br>
+Your puzzle answer was 66296566363189.
