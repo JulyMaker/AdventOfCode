@@ -152,6 +152,26 @@ std::vector<std::string> parseInputReg(std::string& s, std::string rex)
     return output;
 }
 
+std::pair<std::vector<std::string>, std::vector<std::string>> parseInputReg(std::ifstream& infile, std::string rex1, std::string rex2)
+{
+    std::regex pattern1 = std::regex{ rex1 };
+    std::regex pattern2 = std::regex{ rex2 };
+    std::vector<std::string> output1;
+    std::vector<std::string> output2;
+
+    bool firstPart = true;
+    for (std::string line; getline(infile, line); )
+    {
+        if (line == "") firstPart = false;
+        std::smatch m;
+
+        (firstPart)? regex_match(line, m, pattern1): regex_match(line, m, pattern2);
+        for (auto& i : m)
+            (firstPart) ? output1.push_back(i) : output2.push_back(i);
+    }
+
+    return { output1, output2 };
+}
 
 /* Split Methods */
 

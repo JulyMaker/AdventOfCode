@@ -70,3 +70,7 @@ Your puzzle answer was 1215.
 Day 18<br>
 Your puzzle answer was 56923.<br>
 Your puzzle answer was 66296566363189.
+
+Day 19<br>
+Your puzzle answer was 397134.<br>
+Your puzzle answer was 127517902575337.

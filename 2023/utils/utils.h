@@ -22,6 +22,7 @@ std::vector<T> parseInput(std::ifstream& is){
 /* Parser input with reg */
 std::vector<std::string> parseInputReg(std::ifstream& infile, std::string rex);
 std::vector<std::string> parseInputReg(std::string& s, std::string rex);
+std::pair<std::vector<std::string>, std::vector<std::string>> parseInputReg(std::ifstream& infile, std::string rex1, std::string rex2);
 
 
 /* Split Methods */
