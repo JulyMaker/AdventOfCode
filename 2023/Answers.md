@@ -78,3 +78,7 @@ Your puzzle answer was 127517902575337.
 Day 20<br>
 Your puzzle answer was 747304011.<br>
 Your puzzle answer was 220366255099387.
+
+Day 21<br>
+Your puzzle answer was 3503.<br>
+Your puzzle answer was 584211423220706.
