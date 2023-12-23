@@ -86,3 +86,7 @@ Your puzzle answer was 584211423220706.
 Day 22<br>
 Your puzzle answer was 375.<br>
 Your puzzle answer was 72352.
+
+Day 23<br>
+Your puzzle answer was 2366.<br>
+Your puzzle answer was 6682.
