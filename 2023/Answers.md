@@ -90,3 +90,7 @@ Your puzzle answer was 72352.
 Day 23<br>
 Your puzzle answer was 2366.<br>
 Your puzzle answer was 6682.
+
+Day 24<br>
+Your puzzle answer was 13910.<br>
+Your puzzle answer was 618534564836937.

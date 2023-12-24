@@ -8,6 +8,9 @@ include_directories(../include/auxi)
 include_directories(../utils)
 include_directories(../inputs)
 
+set(EIGEN_INCLUDE_DIR "../thirdParty/eigen-3.4.0")
+include_directories(${EIGEN_INCLUDE_DIR})
+
 file(GLOB INCLUDES "include/*.h" "include/auxi/*.h" "../utils/*.h" "../utils/*.h.in")
 file(GLOB SOURCES "src/*.cpp" "src/auxi/*.cpp" "../utils/*.cpp" "../inputs/accesoInput.py")
 

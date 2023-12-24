@@ -28,6 +28,8 @@ std::pair<std::vector<std::string>, std::vector<std::string>> parseInputReg(std:
 /* Split Methods */
 std::vector<int> splitI(const std::string& text, const std::string& delims);
 std::vector<uint64_t> splitUInt(const std::string& text, const std::string& delims);
+std::vector<int64_t> splitUInt64(const std::string& text, const std::string& delims);
+std::vector<double> splitDouble(const std::string& text, const std::string& delims);
 std::vector<std::string> splitS(const std::string& text, const std::string& delims);
 
 

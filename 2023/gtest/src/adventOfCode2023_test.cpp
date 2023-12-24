@@ -1,4 +1,3 @@
-// calc_test.cpp
 #include <gtest/gtest.h>
 #include <days.h>
 
@@ -298,8 +297,8 @@ TEST(AdventOfCode2023, advOcodeD_24)
 
     getData(testName, FUNCTIONNAME1, FUNCTIONNAME2, inputFile1, inputFile2);
 
-    EXPECT_EQ(1, launchProblem[FUNCTIONNAME1](inputFile1));
-    EXPECT_EQ(0, launchProblem[FUNCTIONNAME2](inputFile2));
+    EXPECT_EQ(0, launchProblem[FUNCTIONNAME1](inputFile1));
+    EXPECT_EQ(47, launchProblem[FUNCTIONNAME2](inputFile2));
 }
 
 TEST(AdventOfCode2023, advOcodeD_25)

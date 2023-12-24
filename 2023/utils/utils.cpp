@@ -207,6 +207,38 @@ std::vector<uint64_t> splitUInt(const std::string& text, const std::string& deli
     return tokens;
 }
 
+std::vector<int64_t> splitUInt64(const std::string& text, const std::string& delims)
+{
+    std::vector<int64_t> tokens;
+    std::size_t start = text.find_first_not_of(delims), end = 0;
+
+    while ((end = text.find_first_of(delims, start)) != std::string::npos) {
+        if (end != start)
+            tokens.push_back(std::stoll(text.substr(start, end - start)));
+        start = text.find_first_not_of(delims, end);
+    }
+    if (start != std::string::npos)
+        tokens.push_back(std::stoll(text.substr(start)));
+
+    return tokens;
+}
+
+std::vector<double> splitDouble(const std::string& text, const std::string& delims)
+{
+    std::vector<double> tokens;
+    std::size_t start = text.find_first_not_of(delims), end = 0;
+
+    while ((end = text.find_first_of(delims, start)) != std::string::npos) {
+        if (end != start)
+            tokens.push_back(std::stod(text.substr(start, end - start)));
+        start = text.find_first_not_of(delims, end);
+    }
+    if (start != std::string::npos)
+        tokens.push_back(std::stod(text.substr(start)));
+
+    return tokens;
+}
+
 std::vector<std::string> splitS(const std::string& text, const std::string& delims)
 {
     std::vector<std::string> tokens;
