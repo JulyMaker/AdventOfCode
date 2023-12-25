@@ -94,3 +94,7 @@ Your puzzle answer was 6682.
 Day 24<br>
 Your puzzle answer was 13910.<br>
 Your puzzle answer was 618534564836937.
+
+Day 25<br>
+Your puzzle answer was 572000.<br>
+50 stars.

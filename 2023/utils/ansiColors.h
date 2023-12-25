@@ -133,36 +133,35 @@ printf( HWHT  "HWHT"  reset "\n" );
 printf( BHWHT "BHWHT" reset "\n" );
 }
 
-void paintAdventCalendar2022()
+void paintAdventCalendar2023()
 {
-  printf(HGRN"Advent of Code  " WHT"JulyMaker 50" BHYEL"* \n" GRN"\ty(" HGRN"2022" GRN")" reset "\n");
+  printf(HGRN"Advent of Code  " WHT"JulyMaker 50" BHYEL"* \n" GRN"\ty(" HGRN"2023" GRN")" reset "\n");
 
 
-  printf(RED "  - " WHT "/\\" RED " -  -        -       -     -      -    -   " reset "\n");
-  printf(HRED " - " HBLK"/  \\/\\" HRED"  -    -     -  -    -   -  " HBLK"/\\" HRED"   -     -" reset "\n");
-  printf(HBLK " /\\    \\ \\" YEL"-  - -   -   -    - -  -" HBLK"/\\/  \\" YEL"-   -  - " reset "    " "25" BHYEL " " "**" reset "\n");
-  printf(WHT  "/" GRN"@@" WHT"\\   /\\" GRN"#" WHT"\\" GRN"@@@@@##@@@#@@@@###@@@@@#@@@###@@@##@@@" reset "    " "24" BHYEL " " "**" reset "\n");
-  printf(GRN  "#@@.' '.@@#" HGRN"@#@@@@@" BGRN"@@@@@@#@@" GRN"#@@#|@@@#" HGRN"@@#@@@" BGRN"@#@@@@#" reset "    " "23" BHYEL " " "**" reset "\n");
-  printf(GRN  "#@@'. .'#@@@" YEL"." GRN"##@#@@@@@@##@@@##@@#@@##@@@#" WHT"()))" GRN"@@@@" reset "    " "22" BHYEL " " "**" reset "\n");
-  printf(GRN  "@#@@#@@@@#@@@##@@@" YEL"." GRN"#@#@#@@##@@@@@@@@#@##@@@#@@@#@" reset "    " "21" BHYEL " " "**" reset "\n");
-  printf(GRN  "@@###" YEL"." GRN"@@#@#@@##@#@###@@#" YEL"." GRN"@@@" CYN"~~" BGRN"#@@#@@@@@@@@#@##@@@" reset "    " "20" BHYEL " " "**" reset "\n");
-  printf(GRN  "@@@@#|#@@@@#@" CYN"." GRN"@@@@@##@@@@@@" CYN"~~~~" WHT" .~'" BGRN"@@@@@@@@#@@#@#" reset "    " "19" BHYEL " " "**" reset "\n");
-  printf(GRN  "@@@@#@#@@#@@@#" CYN"." GRN"#@##@@@@@" HGRN "@" GRN "@@@" CYN "~~" WHT " /" HRED "~" WHT "\\ " HGRN "#" HBLK "@#" GRN "@" HBLK "##@@###@@@" reset "    " "18" BHYEL " " "**" reset "\n");
-  printf(GRN  "#@@@" YEL"." GRN"@#@##@@#@@" CYN".." GRN"#@#@#@@@@@#@" WHT" / " HRED"/ " WHT"\\ " GRN"##@@@@@#@@@##" reset "    " "17" BHYEL " " "**" reset "\n");
-  printf(GRN  "@##@##@@@@#@@@@#" CYN".." GRN"#@@##@@##@@" WHT"/ " HRED"/ \\ " WHT"\\" GRN"@#@@@@@@#|##@" reset "    " "16" BHYEL " " "**" reset "\n");
-  printf(GRN  "#@@##@@#@@#@@" GRN "@@_" CYN ".~." GRN "_@@" HBLK "@" HGRN "#" HBLK "#@" HGRN "@" GRN "@" WHT".'" HRED"/\\" WHT".'" HRED"~" WHT". " GRN"@#@@#@##@@@@" reset "    " "15" BHYEL " " "**" reset "\n");
-  printf(GRN  "#@@#" YEL"." GRN"@@@##@##" HGRN "@" GRN "@" WHT " ||| " GRN "@#@@#@#" WHT"'." HRED"~" WHT".'" HRED"~" WHT". " HRED"\\" WHT"'." GRN"@@@@@@@@#@#" reset "    " "14" BHYEL " " "**" reset "\n");
-  printf(GRN  "@@@@#@@@@@@@##"  HGRN "#@" WHT "~~~" GRN "@#@@@@@#@" WHT"' ..'.'." HRED"\\" WHT". . " GRN"@@@@#@##" reset "    " "13" BHYEL " " "**" reset "\n");
-  printf(GRN  "@@#@@@@@@@@#" GRN "@#" CYN ".~~." HGRN "#@@#@@@@@@@###@ " WHT".'." HRED"~~~" WHT"' " GRN"@" WHT"'" GRN"#@@#@" reset "    " "12" BHYEL " " "**" reset "\n");
-  printf(GRN  "@@#@@@@@#@" GRN "@" HGRN "@" CYN ".~~."  HGRN "#@@##@@@@#@@@@@@#@  " HRED"~~~~~" WHT".." GRN"@@#@@#" reset "    " "11" BHYEL " " "**" reset "\n");
-  printf(GRN  "#@@@" YEL"." GRN"@@@@" GRN "@@" CYN ".~~." HGRN "#@#@#@##@#@@#@@@@#" WHT".'" HRED"/ ~~~ \\" WHT"' " GRN"#@@@#" reset "    " "10" BHYEL " " "**" reset "\n");
-  printf(GRN  "@" HGRN "#" GRN "@#" YEL "." GRN "@#" WHT " _" YEL "|%%%%%%=%%%%|" WHT "_ " GRN "@@@##@@@##@@#" WHT". " HRED"~ /" WHT"' .'" HRED"/\\" WHT"." GRN"@@@@" BRED"|" reset "    " "9" BHYEL "  " "**" reset "\n");
-  printf(HBLK "@#@" HGRN "@@" YEL ".." WHT "/  \\" CYN ".~~." WHT "/  \\" YEL "....." GRN "@@##@#@@#" WHT"' " HRED"/\\" WHT".''" HRED"/" WHT"' " HRED"\\" WHT"' " GRN"@@@" reset "    " "8" BHYEL "  " "**" reset "\n");
-  printf(GRN  "@@@@#@@@@" GRN "@" HGRN "@" CYN ".~~." GRN "#@" HGRN "#@" GRN "@#@#@" YEL "." HGRN "@" GRN "@#@@@#" WHT"'." HRED"/" WHT"." HRED"/\\ " WHT"." HRED"\\" WHT"'." HRED"/\\ " WHT"'. " reset "    " "7" BHYEL "  " "**" reset "\n");
-  printf(GRN  "@@##@#@#@@" GRN "@@" CYN ".~~." GRN "@@@@@" HGRN "@"  GRN "@" YEL ".." GRN "@@@#@@" WHT"' " HRED"~" WHT". " HRED"\\" WHT"." HRED"\\  \\ \\" WHT"." HRED"~~~" WHT"." reset "    " "6" BHYEL "  " "**" reset "\n");
-  printf(GRN  "@@@@#@@@" RED "|" GRN "@" HGRN "@" GRN "@" HGRN "@" CYN ".~~." GRN "##" YEL "."  WHT "/\\" YEL ".'" GRN "@#@#@@#@" WHT"'.' .'" HRED"/" WHT"." GRN"@" WHT". " HRED"/" WHT".'" HRED"~~~" reset "    " "5" BHYEL "  " "**" reset "\n");
-  printf(GRN  "@#@#@" HGRN "@" GRN "#" GRN "@@" HGRN "@" GRN "@" YEL ".'" CYN " ~  " YEL "'." WHT "/\\" YEL "'." WHT "/\\" YEL "' ." GRN "@" HGRN "@" GRN "@" HGRN "@##@" WHT "'" HRED " /\\" WHT" . " HRED "/" WHT"'. ..'" reset "    " "4" BHYEL "  " "**" reset "\n");
-  printf(HGRN "#" GRN "@" HGRN "#" GRN "#" HGRN "#" GRN "@" HGRN "@" GRN "@@" YEL "_/" CYN " ~   ~  " YEL "\\ ' '. '.'." GRN "@#" HGRN "#@" HRED "  /  \\  \\  " HGRN "#@#@" reset "    " "3" BHYEL "  " "**" reset "\n");
-  printf(YEL  "-~------'" CYN "    ~    ~ " YEL "'--~-----~-~----___________--" reset "    " "2" BHYEL "  " "**" reset "\n");
-  printf(CYN  "  ~    ~  ~      ~     ~ ~   ~     ~  ~  ~   ~     " reset "  " "1" BHYEL "  " "**" reset "\n");
+  printf(HRED "                      ...'''''''''...             " reset "\n");
+  printf(HBLK "                   .'' ~/\\* ~~~~  /\\ ''.        " reset "    " "14" BHYEL " " "**" reset "\n");
+  printf(YEL  "                 .' /\\/\\ ~~~~~~~~ * /~\\ '.     " reset "     " "15" BHYEL " " "**" reset "\n");
+  printf(YEL  "            ...  :~~~~~~~~~ /\\ ~~~~/ * \\ :      " reset "    " "16" BHYEL " " "**" reset "\n");
+  printf(GRN  "     .''....' '..'.~~~~/\\*/\\ ~  /\\   /\\ .'    " reset "      " "13" BHYEL " " "**" reset "\n");
+  printf(YEL  "     '.ZZ~   ~ * ~~~~.   /\\  /\\   /\\ ..'        " reset "    " "17" BHYEL " " "**" reset "\n");
+  printf(GRN  " .'''' ZZ* .'''.[]~~~''''.........'''            " reset "   " "12" BHYEL " " "**" reset "\n");
+  printf(GRN  " '.... ~   '...'  *[]....'                       " reset "   " "18" BHYEL " " "**" reset "\n");
+  printf(YEL  "     .'*  ~   [^^^] '.                           " reset "   " "11" BHYEL " " "**" reset "\n");
+  printf(YEL  "     '..''''.*.''''..'' ''...                    " reset "   " "10" BHYEL " " "**" reset "\n");
+  printf(GRN  "           .'''~ ~ ~ . * ### ''.                 " reset "   " "19" BHYEL " " "**" reset "\n");
+  printf(GRN  "         .' ~  ,* ~ '\", ~ ##### '.              " reset "     " "9" BHYEL " " "**" reset "\n");
+  printf(YEL  "         : ~ '(~), ~ * ~ ~ ~ ### :               " reset "    " "8" BHYEL " " "**" reset "\n");
+  printf(GRN  "         '. ~ \" ' ~ ~ ~ * ~~~## .'              " reset "    " "20" BHYEL " " "**" reset "\n");
+  printf(GRN  "           '.. ~ ~ * ~ ####~~~~'.'''''''''...    " reset "    " "7" BHYEL " " "**" reset "\n");
+  printf(GRN  "              '''.........'''' ~ .'*. ~  ..  ''. " reset "    " "6" BHYEL " " "**" reset "\n");
+  printf(GRN  "                         .' ~ .. '...' ~'* '.~  '." reset "  " "21" BHYEL " " "**" reset "\n");
+  printf(GRN  "                         ~~ .~~~'. ~     '. *'.~ :" reset "   " "5" BHYEL " " "**" reset "\n");
+  printf(WHT  "                  ...''''~~~'*~~.'  .''.~  '..' .'" reset "  " "22" BHYEL " " "**" reset "\n");
+  printf(WHT  "               .''   -   - '..  ~..'*   '. ~ ..' " reset "    " "4" BHYEL " " "**" reset "\n");
+  printf(WHT  "             .' * -    /\\ -   '''../......'''   " reset "    " "23" BHYEL " " "**" reset "\n");
+  printf(WHT  "             :  -   -  - *  /\\   -/  :          " reset "    " "25" BHYEL " " "**" reset "\n");
+  printf(WHT  "             '.    - *  /\\ -   - /  .'          " reset "    " "24" BHYEL " " "**" reset "\n");
+  printf(WHT  "               '..    -     -   *..'             " reset "    " "3" BHYEL " " "**" reset "\n");
+  printf(WHT  "   ----@          '''..*......'''                " reset "    " "2" BHYEL " " "**" reset "\n");
+  printf(CYN  " * ! /^\\                                           " reset "  " "1" BHYEL " " "**" reset "\n");
 }
