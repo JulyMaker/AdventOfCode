@@ -1,0 +1,4 @@
+#define DAY_PATH(day) "${CMAKE_CURRENT_SOURCE_DIR}/inputs/input"+day+".txt"
+#define DAY_EXAMPLE_PATH(day, problem) "${CMAKE_CURRENT_SOURCE_DIR}/examples/inputExampleday"+day+"Problem"+problem+".txt"
+#define SCRIPT_PATH() "${CMAKE_CURRENT_SOURCE_DIR}/inputs/accesoInput.py"
+#define COOKIE_PATH() "${CMAKE_CURRENT_SOURCE_DIR}/inputs/cookie"

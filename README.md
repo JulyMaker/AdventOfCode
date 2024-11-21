@@ -9,6 +9,7 @@ $ mkdir build
 $ cd build
 $ cmake .. -G "Visual Studio 15 2017 Win64" //where you can choose your compiler
 $ cmake .. -G "Visual Studio 16 2019"
+$ cmake .. -G "Visual Studio 17 2022"
 ```
 - **Build** folder is a solution folder, in my case use visual studio 
 - In my case **deploy** folder is a compile results (exe file), you can change in DayX/CMakeLists file
