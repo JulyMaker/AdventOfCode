@@ -1,7 +1,7 @@
 # AdventOfCode2023Solutions
 Day 01<br>
-Your puzzle answer was .<br>
-Your puzzle answer was .
+Your puzzle answer was 1938424.<br>
+Your puzzle answer was 22014209.
 
 Day 02<br>
 Your puzzle answer was .<br>
