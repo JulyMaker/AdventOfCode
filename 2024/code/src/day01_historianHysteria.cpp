@@ -29,19 +29,15 @@ uint64_t adventDay01P22024(std::ifstream& input)
     uint64_t score = 0;
 
     std::vector<int> leftList;
-    std::vector<int> rightList;
+    std::unordered_map<int, int> count;
 
     int leftnNum, rightNum;
     while (input >> leftnNum >> rightNum)
     {
         leftList.push_back(leftnNum);
-        rightList.push_back(rightNum);
+        count[rightNum]++;
     }
-
-    std::unordered_map<int, int> count;
-    for (int num : rightList)
-        count[num]++;
-
+        
     for (int num : leftList)
     {
         int times = 0;
