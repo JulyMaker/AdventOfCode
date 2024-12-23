@@ -8,8 +8,8 @@ Your puzzle answer was 606.<br>
 Your puzzle answer was 644.
 
 Day 03<br>
-Your puzzle answer was .<br>
-Your puzzle answer was .
+Your puzzle answer was 196826776.<br>
+Your puzzle answer was 106780429.
 
 Day 04<br>
 Your puzzle answer was .<br>
