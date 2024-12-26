@@ -20,8 +20,8 @@ Your puzzle answer was 5064.<br>
 Your puzzle answer was 5152.
 
 Day 06<br>
-Your puzzle answer was .<br>
-Your puzzle answer was .
+Your puzzle answer was 5409.<br>
+Your puzzle answer was 2022.
 
 Day 07<br>
 Your puzzle answer was .<br>
