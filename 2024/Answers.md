@@ -32,8 +32,8 @@ Your puzzle answer was 303.<br>
 Your puzzle answer was 1045.
 
 Day 09<br>
-Your puzzle answer was .<br>
-Your puzzle answer was .
+Your puzzle answer was 6386640365805.<br>
+Your puzzle answer was 6423258376982.
 
 Day 10<br>
 Your puzzle answer was .<br>
