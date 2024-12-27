@@ -44,8 +44,8 @@ Your puzzle answer was 229043.<br>
 Your puzzle answer was 272673043446478.
 
 Day 12<br>
-Your puzzle answer was .<br>
-Your puzzle answer was .
+Your puzzle answer was 1431440.<br>
+Your puzzle answer was 869070.
 
 Day 13<br>
 Your puzzle answer was .<br>
