@@ -48,8 +48,8 @@ Your puzzle answer was 1431440.<br>
 Your puzzle answer was 869070.
 
 Day 13<br>
-Your puzzle answer was .<br>
-Your puzzle answer was .
+Your puzzle answer was 30413.<br>
+Your puzzle answer was 92827349540204.
 
 Day 14<br>
 Your puzzle answer was .<br>
