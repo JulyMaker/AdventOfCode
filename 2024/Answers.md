@@ -52,8 +52,8 @@ Your puzzle answer was 30413.<br>
 Your puzzle answer was 92827349540204.
 
 Day 14<br>
-Your puzzle answer was .<br>
-Your puzzle answer was .
+Your puzzle answer was 230435667.<br>
+Your puzzle answer was 7709.
 
 Day 15<br>
 Your puzzle answer was .<br>
