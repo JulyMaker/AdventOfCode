@@ -56,8 +56,8 @@ Your puzzle answer was 230435667.<br>
 Your puzzle answer was 7709.
 
 Day 15<br>
-Your puzzle answer was .<br>
-Your puzzle answer was .
+Your puzzle answer was 1559280.<br>
+Your puzzle answer was 1576353.
 
 Day 16<br>
 Your puzzle answer was .<br>
