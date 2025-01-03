@@ -68,8 +68,8 @@ Your puzzle answer was 4,6,1,4,2,1,3,1,6.<br>
 Your puzzle answer was 202366627359274.
 
 Day 18<br>
-Your puzzle answer was .<br>
-Your puzzle answer was .
+Your puzzle answer was 334.<br>
+Your puzzle answer was 20,12.
 
 Day 19<br>
 Your puzzle answer was .<br>
