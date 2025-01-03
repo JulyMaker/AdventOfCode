@@ -76,8 +76,8 @@ Your puzzle answer was 327.<br>
 Your puzzle answer was 772696486795255.
 
 Day 20<br>
-Your puzzle answer was .<br>
-Your puzzle answer was .
+Your puzzle answer was 1338.<br>
+Your puzzle answer was 975376.
 
 Day 21<br>
 Your puzzle answer was .<br>

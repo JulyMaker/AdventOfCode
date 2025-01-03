@@ -6,7 +6,7 @@ int main(int argc, char *argv[])
 {
   // argv contain inputFile, day, problem and example
   int problem = 2;
-  std::string DAY = "19";
+  std::string DAY = "20";
   bool EXAMPLE = false;
   const std::string YEAR = "2024";
 
