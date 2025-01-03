@@ -72,8 +72,8 @@ Your puzzle answer was 334.<br>
 Your puzzle answer was 20,12.
 
 Day 19<br>
-Your puzzle answer was .<br>
-Your puzzle answer was .
+Your puzzle answer was 327.<br>
+Your puzzle answer was 772696486795255.
 
 Day 20<br>
 Your puzzle answer was .<br>
