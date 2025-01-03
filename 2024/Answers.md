@@ -80,8 +80,8 @@ Your puzzle answer was 1338.<br>
 Your puzzle answer was 975376.
 
 Day 21<br>
-Your puzzle answer was .<br>
-Your puzzle answer was .
+Your puzzle answer was 202274.<br>
+Your puzzle answer was 245881705840972.
 
 Day 22<br>
 Your puzzle answer was .<br>
