@@ -84,8 +84,8 @@ Your puzzle answer was 202274.<br>
 Your puzzle answer was 245881705840972.
 
 Day 22<br>
-Your puzzle answer was .<br>
-Your puzzle answer was .
+Your puzzle answer was 18261820068.<br>
+Your puzzle answer was 2044.
 
 Day 23<br>
 Your puzzle answer was 1599.<br>
