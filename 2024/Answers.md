@@ -88,8 +88,8 @@ Your puzzle answer was .<br>
 Your puzzle answer was .
 
 Day 23<br>
-Your puzzle answer was .<br>
-Your puzzle answer was .
+Your puzzle answer was 1599.<br>
+Your puzzle answer was av,ax,dg,di,dw,fa,ge,kh,ki,ot,qw,vz,yw.
 
 Day 24<br>
 Your puzzle answer was .<br>

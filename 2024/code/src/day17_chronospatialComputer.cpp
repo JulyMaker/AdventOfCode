@@ -167,7 +167,7 @@ void reverseSearch(CPU& prog2, std::string const& expected, int64_t const Aprefi
     if (outpos < 0)
     {
         std::cout << "Corrected A to " << Aprefix;
-        std::exit(EXIT_SUCCESS);
+        return; //std::exit(EXIT_SUCCESS);
     }
 
     for (int64_t const Alow : iota(0, 8)) 
