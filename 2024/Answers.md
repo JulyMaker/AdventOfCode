@@ -92,8 +92,8 @@ Your puzzle answer was 1599.<br>
 Your puzzle answer was av,ax,dg,di,dw,fa,ge,kh,ki,ot,qw,vz,yw.
 
 Day 24<br>
-Your puzzle answer was .<br>
-Your puzzle answer was .
+Your puzzle answer was 51107420031718.<br>
+Your puzzle answer was cpm,ghp,gpr,krs,nks,z10,z21,z33.
 
 Day 25<br>
 Your puzzle answer was .<br>
