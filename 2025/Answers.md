@@ -12,8 +12,8 @@ Your puzzle answer was 17432.<br>
 Your puzzle answer was 173065202451341.
 
 Day 04<br>
-Your puzzle answer was.<br>
-Your puzzle answer was..
+Your puzzle answer was 1363.<br>
+Your puzzle answer was 8184.
 
 Day 05<br>
 Your puzzle answer was.<br>
