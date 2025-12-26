@@ -20,8 +20,8 @@ Your puzzle answer was 701.<br>
 Your puzzle answer was 352340558684863.
 
 Day 06<br>
-Your puzzle answer was.<br>
-Your puzzle answer was..
+Your puzzle answer was 6635273135233.<br>
+Your puzzle answer was 12542543681221.
 
 Day 07<br>
 Your puzzle answer was.<br>
