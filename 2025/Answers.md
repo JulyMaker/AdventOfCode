@@ -28,8 +28,8 @@ Your puzzle answer was 1626.<br>
 Your puzzle answer was 48989920237096.
 
 Day 08<br>
-Your puzzle answer was.<br>
-Your puzzle answer was..
+Your puzzle answer was 105952.<br>
+Your puzzle answer was 975931446.
 
 Day 09<br>
 Your puzzle answer was.<br>
