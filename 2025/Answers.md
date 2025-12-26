@@ -4,8 +4,8 @@ Your puzzle answer was 1081.<br>
 Your puzzle answer was 6689.
 
 Day 02<br>
-Your puzzle answer was.<br>
-Your puzzle answer was..
+Your puzzle answer was 21898734247.<br>
+Your puzzle answer was 28915664389.
 
 Day 03<br>
 Your puzzle answer was.<br>
