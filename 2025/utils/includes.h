@@ -27,3 +27,4 @@
 #include <bitset>
 #include <cstdlib>
 #include <filesystem>
+#include <ranges>

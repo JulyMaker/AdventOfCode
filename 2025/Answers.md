@@ -24,8 +24,8 @@ Your puzzle answer was 6635273135233.<br>
 Your puzzle answer was 12542543681221.
 
 Day 07<br>
-Your puzzle answer was.<br>
-Your puzzle answer was..
+Your puzzle answer was 1626.<br>
+Your puzzle answer was 48989920237096.
 
 Day 08<br>
 Your puzzle answer was.<br>
