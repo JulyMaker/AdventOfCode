@@ -40,8 +40,8 @@ Your puzzle answer was.<br>
 Your puzzle answer was..
 
 Day 11<br>
-Your puzzle answer was.<br>
-Your puzzle answer was..
+Your puzzle answer was 603.<br>
+Your puzzle answer was 380961604031372.
 
 Day 12<br>
 Your puzzle answer was.<br>
