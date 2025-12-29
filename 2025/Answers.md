@@ -44,57 +44,5 @@ Your puzzle answer was 603.<br>
 Your puzzle answer was 380961604031372.
 
 Day 12<br>
-Your puzzle answer was.<br>
-Your puzzle answer was..
-
-Day 13<br>
-Your puzzle answer was.<br>
-Your puzzle answer was..
-
-Day 14<br>
-Your puzzle answer was.<br>
-Your puzzle answer was..
-
-Day 15<br>
-Your puzzle answer was.<br>
-Your puzzle answer was..
-
-Day 16<br>
-Your puzzle answer was.<br>
-Your puzzle answer was..
-
-Day 17<br>
-Your puzzle answer was.<br>
-Your puzzle answer was..
-
-Day 18<br>
-Your puzzle answer was.<br>
-Your puzzle answer was..
-
-Day 19<br>
-Your puzzle answer was.<br>
-Your puzzle answer was..
-
-Day 20<br>
-Your puzzle answer was.<br>
-Your puzzle answer was..
-
-Day 21<br>
-Your puzzle answer was.<br>
-Your puzzle answer was..
-
-Day 22<br>
-Your puzzle answer was.<br>
-Your puzzle answer was..
-
-Day 23<br>
-Your puzzle answer was.<br>
-Your puzzle answer was..
-
-Day 24<br>
-Your puzzle answer was.<br>
-Your puzzle answer was..
-
-Day 25<br>
-Your puzzle answer was.<br>
-50 stars.
+Your puzzle answer was 538.<br>
+24 stars.

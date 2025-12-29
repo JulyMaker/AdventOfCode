@@ -1,5 +1,5 @@
 #include <days.h>
-#include <ansiColors.h>
+//#include <ansiColors.h>
 #include <ranges>
 
 constexpr int ROWS = 7;
@@ -57,7 +57,7 @@ uint64_t adventDay25P22025(std::ifstream& input)
 {
     uint64_t score = 0;
 
-    paintAdventCalendar2025();
+    //paintAdventCalendar2025();
     std::cout << std::endl;
     std::cout << "        Happy Advent of Code 2025!" << std::endl;
 
