@@ -12,19 +12,7 @@
 #include<day10_.h>
 #include<day11_.h>
 #include<day12_.h>
-#include<day13_.h>
-#include<day14_.h>
-#include<day15_.h>
-#include<day16_.h>
-#include<day17_.h>
-#include<day18_.h>
-#include<day19_.h>
-#include<day20_.h>
-#include<day21_.h>
-#include<day22_.h>
-#include<day23_.h>
-#include<day24_.h>
-#include<day25_.h>
+
 
 #define DEFINE_PROBLEM(day, year) \
     {"adventDay" #day "P1" #year, adventDay##day##P1##year}, \
@@ -44,20 +32,7 @@ static std::map<std::string, std::function<uint64_t(std::ifstream&)>> launchProb
     DEFINE_PROBLEM(09, 2025),
     DEFINE_PROBLEM(10, 2025),
     DEFINE_PROBLEM(11, 2025),
-    DEFINE_PROBLEM(12, 2025),
-    DEFINE_PROBLEM(13, 2025),
-    DEFINE_PROBLEM(14, 2025),
-    DEFINE_PROBLEM(15, 2025),
-    DEFINE_PROBLEM(16, 2025),
-    DEFINE_PROBLEM(17, 2025),
-    DEFINE_PROBLEM(18, 2025),
-    DEFINE_PROBLEM(19, 2025),
-    DEFINE_PROBLEM(20, 2025),
-    DEFINE_PROBLEM(21, 2025),
-    DEFINE_PROBLEM(22, 2025),
-    DEFINE_PROBLEM(23, 2025),
-    DEFINE_PROBLEM(24, 2025),
-    DEFINE_PROBLEM(25, 2025)
+    DEFINE_PROBLEM(12, 2025)
 };
 
 // Funtions map

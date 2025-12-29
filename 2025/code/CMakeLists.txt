@@ -39,6 +39,9 @@ assign_source_group(${INCLUDES})
 add_library(advOCode2025 ${SOURCES} ${INCLUDES})
 add_executable(${TARGET_NAME} ${SOURCES} ${INCLUDES})
 
+target_link_libraries(advOCode2025 glpk_lib)
+target_include_directories(advOCode2025 PRIVATE ${GLPK_INCLUDE_DIR})
+
 target_link_libraries(adventOfCode2025 glpk_lib)
 target_include_directories(adventOfCode2025 PRIVATE ${GLPK_INCLUDE_DIR})
 
